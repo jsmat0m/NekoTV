@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: hianime-client
+    env: static
+    buildCommand: yarn install && yarn build
+    staticPublishPath: dist
