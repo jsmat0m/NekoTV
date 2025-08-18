@@ -101,7 +101,7 @@ const Header = () => {
                 <FaXmark />
               </button>
             )}
-            <button type="submit" className="text-black">
+            <button type="submit" className="text-white">
               <FaSearch />
             </button>
           </div>
