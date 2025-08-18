@@ -2,10 +2,10 @@
 
 const colors = {
   primary: "#269cfc",
-  background: "#011C41",
-  lightbg: "#011C41",
-  card: "#011C41",
-  btnbg: "#011C41",
+  background: "#1A2536",
+  lightbg: "#1A2536",
+  card: "#1A2536",
+  btnbg: "#1A2536",
   yellow: "#F9ED69",
   purple: "#B1B2FF",
   pink: "#F2BED1",
