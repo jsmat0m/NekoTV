@@ -93,11 +93,11 @@ const Header = () => {
             onChange={changeInput}
             placeholder="Search Anime"
             type="text"
-            className="header-search w-full bg-[#161513] px-2 text-lg text-white py-1 rounded-md"
+            className="header-search w-full bg-[#151313] px-2 text-lg text-white py-1 rounded-md"
           />
           <div className="btns absolute right-8 flex justify-center items-center gap-3">
             {value.length > 1 && (
-              <button onClick={emptyInput} type="reset" className="text-black">
+              <button onClick={emptyInput} type="reset" className="text-white">
                 <FaXmark />
               </button>
             )}
