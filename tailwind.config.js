@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = {
-  primary: "#ffdd95",
-  background: "#242428",
+  primary: "#269cfc",
+  background: "#00265B",
   lightbg: "#2f2f33",
   card: "#2f2f33",
   btnbg: "#3a3a3e",
