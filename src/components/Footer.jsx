@@ -27,9 +27,6 @@ const Footer = () => {
           Yanime does not store any files on its servers, <br /> it only links
           to the media hosted on third-party services.{" "}
         </p>
-        <p className="text-sm text-center text-gray-500">
-          Yanime is a fork of ANIXIO
-        </p>
         <p className="mt-4 text-gray-500">© Yanime All rights reserved.</p>
         <div className="btns flex justify-center my-2 items-center gap-2">
           <a
