@@ -23,10 +23,10 @@ const Navbar = () => {
             <Link
               key={item.id}
               to={item.id}
-              className={`px-4 py-2 rounded-xl font-semibold transition-all ${
+              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 location.pathname === item.id
-                  ? "bg-primary text-black"
-                  : "bg-black/50 text-white hover:bg-primary hover:text-black"
+                  ? "bg-primary/80 text-black"
+                  : "bg-white/10 text-white hover:bg-primary/80 hover:text-black"
               }`}
             >
               {item.name}
@@ -48,17 +48,17 @@ const Navbar = () => {
           <ul
             className={`${
               show ? "flex" : "hidden"
-            } absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-11/12 flex-col items-center bg-black/90 backdrop-blur-md rounded-lg py-4 gap-3 shadow-lg transition-all`}
+            } absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-11/12 flex-col items-center bg-transparent backdrop-blur-md rounded-lg py-4 gap-3 shadow-lg transition-all`}
           >
             {navLinks.map((item) => (
               <li key={item.id} className="w-full text-center">
                 <Link
                   onClick={() => setShow(false)}
                   to={item.id}
-                  className={`block w-full px-4 py-2 rounded-xl font-semibold transition-all ${
+                  className={`block w-full px-4 py-2 rounded-lg font-semibold transition-all ${
                     location.pathname === item.id
-                      ? "bg-primary text-black"
-                      : "bg-black/50 text-white hover:bg-primary hover:text-black"
+                      ? "bg-primary/80 text-black"
+                      : "bg-white/10 text-white hover:bg-primary/80 hover:text-black"
                   }`}
                 >
                   {item.name}
