@@ -14,12 +14,9 @@ const PageNotFound = () => {
   ];
 
   return (
-    <div
-      className="min-h-[100dvh] flex flex-col justify-between items-center text-white px-4"
-      style={{ background: "var(--background)" }}
-    >
+    <div className="min-h-[100dvh] flex flex-col justify-between items-center text-white px-4" style={{ background: "transparent" }}>
       <Helmet>
-        <title>404 Error</title>
+        <title>404 PAGE NOT FOUND</title>
         <meta property="og:title" content="PAGE NOT FOUND - Yanime" />
       </Helmet>
 
@@ -29,7 +26,7 @@ const PageNotFound = () => {
           src={pageNotFound}
           alt="404 page not found"
         />
-        <h1 className="text-3xl md:text-4xl text-primary font-bold">404 Error</h1>
+        <h1 className="text-3xl md:text-4xl text-primary font-bold">404 ERROR</h1>
         <h2 className="text-lg md:text-xl text-white/80 mb-4">
           Oops! We Can&apos;t Find This Page.
         </h2>
