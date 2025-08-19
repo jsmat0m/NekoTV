@@ -27,12 +27,51 @@ Check out a live demo here: [Yanime Live Demo](https://Yanime.vercel.app) (Add t
 - **Frontend**: React
 - **Styling**: Tailwind CSS
 - **State Management**: React Context API / Redux (mention whichever you're using)
-- **API**: Integration with [Anime APIs](https://github.com/jsmat0m/Yanime-API) or other anime databases (if applicable)
+- **API**: Integration with [Yanime-API](https://github.com/jsmat0m/Yanime-API) or other anime databases (if applicable)
 
 ---
 
-## Installation
+## <span id="installation">💻 Installation</span>
+
+### # Prerequisites
+
+make sure you have installed bun js and pnpm
+
+or you can download from here
+
+1. bun.js
+
+```bash
+https://bun.sh/docs/installation
+```
+
+<!-- 2. pnpm
+
+```bash
+https://pnpm.io/installation
+``` -->
 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/jsmat0m/Yanime.git
+
+
+2. navigate to project
+
+   ```bash
+     cd Yanime
+   ```
+
+3. Install all the dependencies.
+
+   ```copy
+   bun install
+   ```
+
+4. Start the server!
+
+   ```bash
+   bun run dev
+   ```
+
+   Now the server should be running on [http://localhost:5173](http://localhost:5173)
