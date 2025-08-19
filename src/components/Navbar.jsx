@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full py-4">
+    <nav className="w-full py-4 bg-transparent">
       <div className="max-w-7xl mx-auto flex justify-center items-center px-4 sm:px-6 lg:px-8">
         {/* Desktop Links */}
         <div className="hidden md:flex gap-4">
