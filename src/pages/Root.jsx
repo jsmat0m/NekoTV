@@ -19,10 +19,17 @@ const Root = () => {
 
   return (
     <div className="relative min-h-[100dvh] w-full bg-black">
+      {/* Logo at the top */}
+      <div className="flex justify-center py-4 bg-black">
+        <Logo className="w-40 md:w-56 animate-fadeIn" />
+      </div>
+
+      {/* Navbar below the logo */}
       <Navbar />
 
+      {/* Hero Section */}
       <div
-        className="relative flex flex-col items-center justify-center min-h-[calc(100dvh-60px)] px-4 text-center bg-cover bg-center"
+        className="relative flex flex-col items-center justify-center min-h-[calc(100dvh-60px-80px)] px-4 text-center bg-cover bg-center"
         style={{
           backgroundImage: `url(${background})`,
         }}
@@ -30,8 +37,6 @@ const Root = () => {
         <div className="absolute inset-0 bg-grey/30 bg-opacity-30"></div>
 
         <div className="relative z-10 flex flex-col items-center gap-6 w-full max-w-2xl">
-          <Logo className="w-40 md:w-56 animate-fadeIn" />
-
           <form
             onSubmit={handleSubmit}
             className="w-full flex flex-col md:flex-row gap-4"
