@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { FaAlignJustify } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { name: "Home", id: "/home" },
@@ -12,42 +13,60 @@ const Navbar = () => {
     { name: "Most Popular", id: "/animes/most-popular" },
     { name: "Top Airing", id: "/animes/top-airing" },
   ];
+
   return (
-    <nav>
-      <div className="nav hidden md:flex justify-center items-center">
-        <ul className="flex gap-10">
+    <nav className="w-full py-4">
+      <div className="max-w-7xl mx-auto flex justify-center items-center px-4 sm:px-6 lg:px-8">
+        {/* Desktop Links */}
+        <div className="hidden md:flex gap-4">
           {navLinks.map((item) => (
-            <li className="hover:text-primary font-bold" key={item.id}>
-              <a className="" href={item.id}>
-                {item.name}
-              </a>
-            </li>
+            <Link
+              key={item.id}
+              to={item.id}
+              className={`px-4 py-2 rounded-xl font-semibold transition-all ${
+                location.pathname === item.id
+                  ? "bg-primary text-black"
+                  : "bg-black/50 text-white hover:bg-primary hover:text-black"
+              }`}
+            >
+              {item.name}
+            </Link>
           ))}
-        </ul>
-      </div>
-      <div className="block md:hidden relative w-full">
-        <button onClick={() => setShow(!show)}>
-          <h1 className="flex pt-5 pl-5 justify-center items-center gap-1">
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden relative">
+          <button
+            onClick={() => setShow(!show)}
+            className="text-white p-2 hover:text-primary transition-colors flex items-center gap-2"
+          >
             <FaAlignJustify />
             Menu
-          </h1>
-        </button>
-        <ul
-          className={`${
-            show ? "flex" : "hidden"
-          } w-11/12 mx-3 absolute flex-col justify-center items-center z-10 bg-background  rounded-md py-5 gap-3 md:gap-10`}
-        >
-          {navLinks.map((item) => (
-            <li
-              className="hover:text-primary hover:bg-lightBg w-full text-center py-2"
-              key={item.id}
-            >
-              <Link className="" to={item.id}>
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          </button>
+
+          {/* Mobile Dropdown */}
+          <ul
+            className={`${
+              show ? "flex" : "hidden"
+            } absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-11/12 flex-col items-center bg-black/90 backdrop-blur-md rounded-lg py-4 gap-3 shadow-lg transition-all`}
+          >
+            {navLinks.map((item) => (
+              <li key={item.id} className="w-full text-center">
+                <Link
+                  onClick={() => setShow(false)}
+                  to={item.id}
+                  className={`block w-full px-4 py-2 rounded-xl font-semibold transition-all ${
+                    location.pathname === item.id
+                      ? "bg-primary text-black"
+                      : "bg-black/50 text-white hover:bg-primary hover:text-black"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
