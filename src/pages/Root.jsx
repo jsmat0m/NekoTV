@@ -60,7 +60,7 @@ const Root = () => {
             <img
               src={banner}
               alt="banner"
-              className="w-64 md:w-96 lg:w-[600px] animate-fadeIn"
+              className="w-64 md:w-96 lg:w-[400px] animate-fadeIn"
             />
           </div>
 
