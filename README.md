@@ -35,26 +35,12 @@ Check out a live demo here: [Yanime Live Demo](https://Yanime.vercel.app) (Add t
 
 ### # Prerequisites
 
-make sure you have installed bun js and pnpm
-
-or you can download from here
-
-1. bun.js
-
-```bash
-https://bun.sh/docs/installation
-```
-
-<!-- 2. pnpm
-
-```bash
-https://pnpm.io/installation
-``` -->
+Make sure you have installed bun js and pnpm
 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/jsmat0m/Yanime.git
-
+   ```
 
 2. navigate to project
 
