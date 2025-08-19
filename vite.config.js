@@ -7,3 +7,4 @@ export default defineConfig({
     allowedHosts: ['yanime-one.vercel.app']
   }
 })
+ 
