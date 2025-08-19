@@ -13,7 +13,6 @@
       name="keywords"
       content="Yanime, Yanime to, aniwatch, zorox, zoro anime, zoro to, zoroxtv, watch anime online free, free watch anime, anime online to watch"
     />
-    <meta charset="utf-8" />
     <meta name="robots" content="index, follow" />
     <meta name="revisit-after" content="1 days" />
     <meta property="og:type" content="website" />
@@ -25,7 +24,7 @@
       property="og:description"
       content="Yanime to is a free no ads anime site to watch free anime. Online anime streaming at Yanime with DUB, SUB in HD."
     />
-    <meta property="og:image" content="/src/assets/preview.jpg?v=?v=0.29" />
+    <meta property="og:image" content="/src/assets/preview.jpg?v=0.29" />
     <meta property="og:image:width" content="650" />
     <meta property="og:image:height" content="350" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -43,10 +42,39 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      /* Reset margin */
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Nunito', 'Roboto', sans-serif;
+      }
+
+      /* Background grid */
+      .bg-grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #101B2A; /* dark background */
+        background-image: 
+          linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 40px 40px; /* grid spacing */
+      }
+    </style>
   </head>
   <body>
+    <!-- Background grid -->
+    <div class="bg-grid"></div>
+
+    <!-- React root -->
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
-  <script></script>
 </html>
