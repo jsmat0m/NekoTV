@@ -18,7 +18,7 @@
 
 ## Demo
 
-Check out a live demo here: [Yanime Live Demo](https://Yanime.vercel.app) (Add the link to your deployed app)
+Check out a live demo here: [Yanime Live Demo](https://yanime-one.vercel.app) (Add the link to your deployed app)
 
 ---
 
