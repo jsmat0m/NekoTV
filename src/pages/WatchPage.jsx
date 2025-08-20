@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet";
 
 const capitalizeWords = (str) => {
   return str
-    .split("-")
+    .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 };
@@ -25,6 +25,18 @@ const WatchPage = () => {
 
   const { data, isError } = useApi(`/episodes/${id}`);
   const episodes = data?.data;
+
+  const formattedAnimeName = (() => {
+    const parts = id.split("-");
+    const lastPart = parts[parts.length - 1];
+
+    const nameParts = /^\d+$/.test(lastPart) ? parts.slice(0, -1) : parts;
+
+    const firstThree = nameParts.slice(0, 3).join(" ");
+    return nameParts.length > 3
+      ? `${capitalizeWords(firstThree)}...`
+      : capitalizeWords(nameParts.join(" "));
+  })();
 
   const updateParams = (newParam) => {
     setSearchParams((prev) => {
@@ -40,6 +52,35 @@ const WatchPage = () => {
       updateParams(firstEp);
     }
   }, [ep, episodes, setSearchParams]);
+
+  useEffect(() => {
+    if (!episodes) return;
+
+    try {
+      const stored = JSON.parse(localStorage.getItem("continueWatching")) || [];
+
+      const currentEpObj =
+        episodes.find((e) => e.id.split("ep=").pop() === ep) || episodes[0];
+
+      if (!currentEpObj) return;
+
+      const newEntry = {
+        animeId: id,
+        animeName: capitalizeWords(id.replace(/-\d+$/, "")), 
+        episodeNumber: currentEpObj.episodeNumber, 
+        episodeId: currentEpObj.id.split("ep=").pop(),
+        episodesCount: episodes.length,
+        lastWatched: new Date().toISOString(),
+      };
+
+      const filtered = stored.filter((a) => a.animeId !== id);
+      filtered.unshift(newEntry);
+      const sliced = filtered.slice(0, 60);
+      localStorage.setItem("continueWatching", JSON.stringify(sliced));
+    } catch (err) {
+      console.error("Error saving to localStorage:", err);
+    }
+  }, [episodes, id, ep]);
 
   if (isError) return <PageNotFound />;
   if (!episodes) return <Loader className="h-screen" />;
@@ -63,8 +104,6 @@ const WatchPage = () => {
   const hasNextEp = Boolean(episodes[currentEp?.episodeNumber - 1 + 1]);
   const hasPrevEp = Boolean(episodes[currentEp?.episodeNumber - 1 - 1]);
 
-  const formattedAnimeName = capitalizeWords(id.split("-").slice(0, 2).join("-"));
-
   return (
     <div className="bg-backGround pt-14 max-w-screen-xl mx-auto py-2 md:px-2">
       <Helmet>
@@ -76,8 +115,9 @@ const WatchPage = () => {
       </Helmet>
 
       <div className="flex flex-col gap-2">
+
         <div className="path flex mb-2 mx-2 items-center gap-2 text-base ">
-          <Link className="" to="/home">
+          <Link to="/home">
             <h4 className="hover:text-primary">Home</h4>
           </Link>
           <span className="h-1 w-1 rounded-full bg-primary"></span>
@@ -121,7 +161,7 @@ const WatchPage = () => {
         </div>
 
         <ul
-          className={`episodes max-h-[50vh] py-4 px-2 overflow-scroll bg-lightbg grid gap-1  md:gap-2 ${
+          className={`episodes max-h-[50vh] py-4 px-2 overflow-scroll bg-lightbg grid gap-1 md:gap-2 ${
             layout === "row"
               ? " grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
               : " grid-cols-5 md:grid-cols-10"
