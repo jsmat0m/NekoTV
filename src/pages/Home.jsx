@@ -3,6 +3,7 @@ import { useApi } from "../services/useApi";
 import HeroBanner from "../components/HeroBanner";
 import notify from "../utils/Toast";
 import TrendingLayout from "../layouts/TrendingLayout";
+import ContinueWatching from "../layouts/ContinueWatching"; // import here
 import DynamicLayout from "../layouts/DynamicLayout";
 import MainLayout from "../layouts/MainLayout";
 import GenresLayout from "../layouts/GenresLayout";
@@ -14,6 +15,7 @@ import Footer from "../components/Footer";
 
 import { genres } from "../utils/genres";
 import { Helmet } from "react-helmet";
+
 const Home = () => {
   const { data, isLoading, error, isError } = useApi("/home");
 
@@ -34,6 +36,7 @@ const Home = () => {
     notify("error", error.message);
     return;
   }
+
   return (
     <div className="relative">
       <Helmet>
@@ -47,13 +50,18 @@ const Home = () => {
         />
         <meta property="og:title" content="home - watanuki" />
       </Helmet>
+
       {isLoading ? (
         <Loader className="h-[100dvh]" />
       ) : (
         <>
           <HeroBanner slides={data?.data?.spotlight} />
+
           <div className="xl:mx-10">
+            <ContinueWatching />
+
             <TrendingLayout data={data?.data?.trending} />
+
             <div className="grid mx-2 grid-cols-12 gap-4 my-5">
               <DynamicLayout
                 title="Top Airing"
@@ -76,6 +84,7 @@ const Home = () => {
                 data={data?.data?.latestCompleted}
               />
             </div>
+
             <div className="row grid my-10 gap-2 justify-center grid-cols-12 sm:mx-2">
               <div className="left col-span-12 xl:col-span-9">
                 <MainLayout
@@ -99,6 +108,7 @@ const Home = () => {
                 <Top10Layout />
               </div>
             </div>
+
             <Footer />
           </div>
         </>
