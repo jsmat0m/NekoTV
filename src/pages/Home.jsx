@@ -3,7 +3,7 @@ import { useApi } from "../services/useApi";
 import HeroBanner from "../components/HeroBanner";
 import notify from "../utils/Toast";
 import TrendingLayout from "../layouts/TrendingLayout";
-import ContinueWatching from "../layouts/ContinueWatching"; // import here
+import ContinueWatching from "../layouts/ContinueWatching";
 import DynamicLayout from "../layouts/DynamicLayout";
 import MainLayout from "../layouts/MainLayout";
 import GenresLayout from "../layouts/GenresLayout";
