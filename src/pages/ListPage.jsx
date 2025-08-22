@@ -97,7 +97,7 @@ const ListPage = () => {
     <div className="list-page pt-14">
       <Helmet>
         <title>{displayTitle}</title>
-        <meta property="og:title" content="explore - Yanime" />
+        <meta property="og:title" content="explore - NekoTV" />
       </Helmet>
       {category === "az-list" && <AZ selected={query} />}
       {pages && !isLoading ? (
