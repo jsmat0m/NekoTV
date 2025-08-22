@@ -109,9 +109,9 @@ const WatchPage = () => {
       <Helmet>
         <title>
           Watch {formattedAnimeName} Online, Free Anime Streaming Online on
-          Yanime Anime Website
+          NekoTV Anime Website
         </title>
-        <meta property="og:title" content="watch - Yanime" />
+        <meta property="og:title" content="watch - NekoTV" />
       </Helmet>
 
       <div className="flex flex-col gap-2">
