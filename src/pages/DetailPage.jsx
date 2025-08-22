@@ -59,7 +59,7 @@ const DetailPage = () => {
 
       <Helmet>
         <title>{titleId}</title>
-        <meta property="og:title" content="detail - Yanime" />
+        <meta property="og:title" content="detail - NekoTV" />
       </Helmet>
       {data && !isLoading ? (
         <div className={`DetailPage relative pt-10 ${bigPoster && "blur-sm"} `}>
