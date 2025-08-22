@@ -8,21 +8,24 @@ const MoreSeasons = ({ data }) => {
         <Link
           to={`/anime/${item.id}`}
           key={item.id}
-          className=" w-[calc(50%-1rem)] sm:w-[calc(180px-1rem)] md:w-[calc(20.66%-1rem)] h-16"
+          className="w-[calc(50%-1rem)] sm:w-[calc(180px-1rem)] md:w-[calc(20.66%-1rem)] h-16"
         >
           <div
-            className={` ${
+            className={`${
               item.isActive
                 ? "text-primary border border-primary"
                 : "text-white border-none"
-            } relative overflow-hidden px-1 rounded-md w-full h-full  flex justify-center items-center`}
+            } relative overflow-hidden px-1 rounded-md w-full h-full flex justify-center items-center`}
           >
             <h1 className="z-20 text-inherit text-center relative line-clamp-2 text-[12px] font-extrabold">
               {item.alternativeTitle}
             </h1>
             <div
-              className="absolute opacity-[.3] blur-[2px] z-10 -inset-3 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${item.poster})` }}
+              className="absolute inset-0 z-10 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url(${item.poster})`,
+                filter: "brightness(100%)", // Full brightness
+              }}
             ></div>
           </div>
         </Link>
