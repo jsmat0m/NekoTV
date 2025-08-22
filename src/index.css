@@ -346,6 +346,11 @@ input:focus {
 @media (max-width: 480px) {
   .logo-char { font-size: 1rem; }
 }
+/* disables the shining sweep without removing other CSS */
+.logo-text::after {
+  display: none !important;
+  animation: none !important;
+}
 
 /* ---------------------- end logo styles ---------------------- */
 
