@@ -41,61 +41,74 @@ const InfoLayout = ({ data, showBigPoster }) => {
         <title>{data?.title ? toTitleCase(data.title) : "Loading..."}</title>
       </Helmet>
 
-      <div className="banner min-h-[700px] relative w-full bg-[#262525] pt-10 md:pt-20">
-        {/* Poster as faint background */}
-        <div className="backdrop-img bg-backGround w-full h-full absolute top-0 left-0 overflow-hidden opacity-[.1]">
+      <div className="banner min-h-[700px] relative w-full pt-10 md:pt-20">
+        {/* Background image */}
+        <div className="absolute inset-0 overflow-hidden">
           <img
             src={data.poster}
             alt={data.title}
-            className="object-cover object-center h-full w-full"
+            className="object-cover object-center w-full h-full opacity-20"
             loading="lazy"
           />
         </div>
 
-        {/* Transparent bottom gradient instead of shadow */}
-        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#262525] to-transparent pointer-events-none"></div>
+        {/* Gradient overlay with transparent bottom fade */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(to bottom, rgba(31,79,112,0.7) 0%, rgba(76,52,140,0.6) 50%, rgba(0,0,0,0) 100%)`,
+            backdropFilter: "blur(2px)",
+          }}
+        ></div>
 
-        <div className="content max-w-[1200px] w-full mx-auto flex flex-col items-start md:flex-row gap-2 mb-2 relative px-2">
+        {/* Content */}
+        <div className="content relative z-10 max-w-[1200px] w-full mx-auto flex flex-col items-start md:flex-row gap-6 mb-2 px-2">
+          {/* Poster */}
           <div className="left w-full md:w-60 xl:w-80 flex justify-center">
             <div
-              className="posterImg px-5 md:w-full cursor-pointer"
+              className="posterImg cursor-pointer rounded-xl overflow-hidden shadow-2xl bg-black/40 p-2"
               onClick={() => showBigPoster(data.poster)}
             >
               <img
                 src={data.poster}
                 alt={data.title}
-                className="rounded-md h-full w-full"
+                className="rounded-lg w-full h-full object-cover"
               />
             </div>
           </div>
 
-          <div className="right mt-3 w-full flex flex-col gap-2">
-            {/* Path */}
-            <div className="path hidden md:flex items-center gap-2 text-base">
-              <Link to="/home">
-                <h4>Home</h4>
+          {/* Info */}
+          <div className="right mt-3 w-full flex flex-col gap-3 text-white">
+            {/* Breadcrumbs */}
+            <div className="path hidden md:flex items-center gap-2 text-sm font-medium opacity-80">
+              <Link to="/home" className="hover:text-primary">
+                Home
               </Link>
               <span className="h-1 w-1 rounded-full bg-primary"></span>
-              <Link to={`/animes/${data.type.toLowerCase()}`}>
-                <h4 className="hover:text-primary">{data.type}</h4>
+              <Link to={`/animes/${data.type.toLowerCase()}`} className="hover:text-primary">
+                {data.type}
               </Link>
               <span className="h-1 w-1 rounded-full bg-primary"></span>
-              <h4 className="gray">{data.title}</h4>
+              <span>{data.title}</span>
             </div>
 
-            {/* Title */}
-            <h1 className="title text-lg md:text-4xl font-extrabold">
+            <h1 className="title text-2xl md:text-4xl font-extrabold drop-shadow-lg">
               {data.title}
             </h1>
-            <div className="alternative gray text-lg font-bold">
-              {data.alternativeTitle}
-            </div>
-            <div className="alternative gray text-lg font-bold">
-              {data.japanese}
-            </div>
 
-            {/* Sounds + Type + Duration */}
-            <div className="sounds flex items-center gap-2 my-2">
+            {data.alternativeTitle && (
+              <div className="gray text-lg font-semibold italic opacity-80">
+                {data.alternativeTitle}
+              </div>
+            )}
+            {data.japanese && (
+              <div className="gray text-lg font-semibold opacity-80">
+                {data.japanese}
+              </div>
+            )}
+
+            {/* Rating + Type + Duration */}
+            <div className="sounds flex items-center flex-wrap gap-2 my-2 text-sm">
               <SoundsInfo
                 episodes={{
                   rating: data.rating,
@@ -103,15 +116,12 @@ const InfoLayout = ({ data, showBigPoster }) => {
                 }}
               />
               <span className="h-1 w-1 rounded-full bg-primary"></span>
-              <span className="type text-[#ccc] text-sm font-bold">
-                {data.type}
-              </span>
+              <span className="uppercase text-gray-200 font-bold">{data.type}</span>
               <span className="h-1 w-1 rounded-full bg-primary"></span>
-              <span className="duration text-[#ccc] text-sm font-bold">
-                {data.duration}
-              </span>
+              <span className="text-gray-200 font-bold">{data.duration}</span>
             </div>
 
+            {/* Circle Rating */}
             <div className="cercle h-14 w-14">
               <CircleRatting rating={data.MAL_score} />
             </div>
@@ -120,7 +130,7 @@ const InfoLayout = ({ data, showBigPoster }) => {
             {data.id && (
               <div className="watch-btn my-4 w-full sm:w-1/2">
                 <Link to={`/watch/${data.id}`} className="block w-full">
-                  <button className="flex justify-center items-center gap-2 py-2 px-4 rounded-3xl text-lg text-black bg-primary w-full">
+                  <button className="flex justify-center items-center gap-2 py-2 px-4 rounded-3xl text-lg text-black bg-primary hover:bg-primary/80 transition-colors w-full">
                     <FaCirclePlay />
                     <span>Watch Now</span>
                   </button>
@@ -129,12 +139,12 @@ const InfoLayout = ({ data, showBigPoster }) => {
             )}
 
             {/* Genres */}
-            <div className="genres rounded-child flex flex-wrap gap-2">
+            <div className="genres flex flex-wrap gap-2">
               {data.genres.map((genre, index) => (
                 <Link to={`/animes/genre/${genre.toLowerCase()}`} key={genre}>
                   <p
                     style={{ background: colors[index % colors.length] }}
-                    className="px-2 border border-black text-black py-0.5 rounded-none"
+                    className="px-2 border border-black text-black py-0.5 rounded-sm text-sm"
                   >
                     {genre}
                   </p>
@@ -144,17 +154,15 @@ const InfoLayout = ({ data, showBigPoster }) => {
 
             {/* Synopsis */}
             {data.synopsis && (
-              <div className="overview">
+              <div className="overview text-gray-200">
                 <p
-                  className={`${
-                    showFull ? "line-clamp-none" : "line-clamp-3"
-                  } text-balance text-gray-300`}
+                  className={`${showFull ? "line-clamp-none" : "line-clamp-3"} text-balance`}
                 >
                   {data.synopsis}
                 </p>
                 <span
                   onClick={() => setShowFull(!showFull)}
-                  className="text-sm cursor-pointer font-extrabold"
+                  className="text-sm cursor-pointer font-bold hover:text-primary"
                 >
                   {showFull ? " - LESS" : " - MORE"}
                 </span>
@@ -163,21 +171,19 @@ const InfoLayout = ({ data, showBigPoster }) => {
 
             <div className="lightBorder"></div>
 
-            {/* Info Section */}
-            <div className="infor flex-col sm:flex-row flex gap-5">
+            {/* Status + Aired */}
+            <div className="info flex-col sm:flex-row flex gap-5 text-sm">
               <div className="flex gap-1 status">
-                <p className="font-extrabold">Status : </p>
-                <span className="text-lighttext">{data.status}</span>
+                <p className="font-extrabold">Status :</p>
+                <span className="text-gray-200">{data.status}</span>
               </div>
               <div className="flex gap-1 aired">
-                <p className="font-extrabold">Aired : </p>
-                <div className="text-lighttext flex items-center gap-2">
+                <p className="font-extrabold">Aired :</p>
+                <div className="text-gray-200 flex items-center gap-2">
                   <span>{data.aired.from}</span>
                   {data.aired.to && (
                     <>
-                      <span>
-                        <FaArrowRight />
-                      </span>
+                      <FaArrowRight />
                       <span>{data.aired.to}</span>
                     </>
                   )}
@@ -187,12 +193,12 @@ const InfoLayout = ({ data, showBigPoster }) => {
 
             <div className="lightBorder"></div>
 
-            {/* Studios */}
+            {/* Studio */}
             {data.studios && (
               <>
                 <div className="studio">
-                  <span>Studio : </span>
-                  <span className="text-primary">
+                  <span>Studio :</span>{" "}
+                  <span className="text-primary font-semibold">
                     {formatName(data.studios)}
                   </span>
                 </div>
