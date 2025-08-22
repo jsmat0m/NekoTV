@@ -47,9 +47,16 @@ const InfoLayout = ({ data, showBigPoster }) => {
           <img
             src={data.poster}
             alt={data.title}
-            className="object-cover object-center w-full h-full opacity-20"
+            className="object-cover object-center w-full h-full"
             loading="lazy"
           />
+          {/* Blur + Brightness overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backdropFilter: "blur(6px) brightness(100%)",
+            }}
+          ></div>
         </div>
 
         {/* Gradient overlay with transparent bottom fade */}
@@ -57,7 +64,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
           className="absolute inset-0"
           style={{
             background: `linear-gradient(to bottom, rgba(31,79,112,0.7) 0%, rgba(76,52,140,0.6) 50%, rgba(0,0,0,0) 100%)`,
-            backdropFilter: "blur(2px)",
           }}
         ></div>
 
