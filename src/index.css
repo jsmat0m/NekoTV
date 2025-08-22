@@ -156,12 +156,87 @@ input:focus {
 
 
   
-/* ---------------------- logo styles ---------------------- */
+@import "./variables.css";
+
+/* ---------------------- global/root ---------------------- */
 :root {
+  /* global fonts / system */
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: #fff;
+
+  /* your design tokens */
+  --background: #071025; /* fallback if variables.css doesn't set it */
+  background-color: var(--background);
+
+  /* logo theme variables (change these to theme the logo) */
   --logo-primary: #7dd3fc;
   --logo-accent: #a78bfa;
   --logo-ink: #0b1020;
 }
+
+/* reset / global */
+* {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------- general app styles (kept from your original) ---------------------- */
+.active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  inset: 0;
+}
+
+/* ... (keep the rest of your original CSS blocks unchanged) ... */
+
+/* small utility/input/button */
+input {
+  outline: none;
+  border: none;
+}
+input:focus {
+  outline: none;
+  border: none;
+}
+.input {
+  border-radius: 15px 0 0 15px;
+}
+.btn {
+  border-radius: 0 15px 15px 0;
+}
+
+/* other selectors (kept as provided) */
+.flw-item {
+  width: calc(16.66% - 0.5rem);
+  margin: 0.7rem 0;
+  position: relative;
+}
+
+/* gradient-text left as-is in case you use it */
+.gradient-text {
+  font-weight: 800;
+  background: linear-gradient(90deg, #fff, var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* cover / sidebar / responsiveness etc - keep your previous rules:
+   .bg-active, .sidebar, .cover-wrapper, .cover, @media ... etc
+   (omitted here for brevity — keep them in your file)
+*/
+
+/* ---------------------- logo styles (merged & fixed) ---------------------- */
 
 .logo-wrapper {
   display: inline-flex;
@@ -194,7 +269,7 @@ input:focus {
   align-items: center;
   gap: 0.08rem;
   margin: 0;
-  position: relative;
+  position: relative; /* necessary for ::after */
 }
 
 .logo-char {
@@ -221,6 +296,7 @@ input:focus {
 .logo-char.ne.has-ear {
   padding-right: 0.2rem;
 }
+
 .logo-char.ne .ear {
   position: absolute;
   top: -6px;
@@ -272,5 +348,4 @@ input:focus {
 }
 
 /* ---------------------- end logo styles ---------------------- */
-
 
