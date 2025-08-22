@@ -54,12 +54,13 @@
 
       /* Theme colors */
       :root {
-        --logo-primary: #7dd3fc; /* blue */
-        --logo-accent:  #a78bfa; /* purple */
-        --bg-dark:      #071025; /* fallback/base */
+        --logo-primary: #7dd3fc; /* blue logo */
+        --logo-accent:  #a78bfa; /* purple logo */
+        --bg-primary:  #4aa3d8; /* darker blue background */
+        --bg-accent:   #8365c2; /* darker purple background */
       }
 
-      /* Background container with two-color gradient and grid */
+      /* Background container with darker gradient and black grid */
       .bg-grid {
         position: fixed;
         inset: 0;
@@ -67,14 +68,12 @@
         pointer-events: none;
         overflow: hidden;
 
-        /* Base gradient (purple -> blue) with soft radial highlight */
         background:
-          radial-gradient(circle at 12% 18%, rgba(255,255,255,0.06), transparent 12%),
-          linear-gradient(135deg, var(--logo-accent) 0%, var(--logo-primary) 100%);
+          radial-gradient(circle at 12% 18%, rgba(255,255,255,0.03), transparent 12%),
+          linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-primary) 100%);
         background-size: cover;
       }
 
-      /* Grid overlay and vignette/texture using pseudo elements */
       .bg-grid::before,
       .bg-grid::after {
         content: "";
@@ -83,17 +82,14 @@
         pointer-events: none;
       }
 
-      /* Thin white grid (kept for design contrast) */
+      /* Optional subtle white overlay for depth */
       .bg-grid::before {
-        background-image:
-          linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-        background-size: 40px 40px;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 50%);
         mix-blend-mode: overlay;
-        opacity: 0.9;
+        opacity: 0.1;
       }
 
-      /* Black grid lines on top */
+      /* BLACK grid lines */
       .bg-grid::after {
         background-image:
           linear-gradient(0deg, rgba(0,0,0,1) 1px, transparent 1px),
@@ -104,22 +100,8 @@
         z-index: 1;
       }
 
-      /* Optional slow gradient animation - commented out */
-      /*
-      .bg-grid {
-        background-size: 300% 300%;
-        animation: slowShift 35s linear infinite;
-      }
-      @keyframes slowShift {
-        0%   { background-position: 0% 50%; }
-        50%  { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      */
-
-      /* Small screen tweak */
       @media (max-width: 480px) {
-        .bg-grid::before { opacity: 0.6; background-size: 32px 32px; }
+        .bg-grid::after { background-size: 32px 32px; }
       }
     </style>
   </head>
