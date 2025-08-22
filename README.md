@@ -1,7 +1,7 @@
-# Yanime
+# NekoTV
 
 
-**Yanime** is a modern, sleek anime streaming web application built with **React** and styled using **Tailwind CSS**. The app is designed to provide anime enthusiasts with a seamless and enjoyable streaming experience.
+**NekoTV** is a modern, sleek anime streaming web application built with **React** and styled using **Tailwind CSS**. The app is designed to provide anime enthusiasts with a seamless and enjoyable streaming experience.
 
 ---
 
@@ -13,12 +13,6 @@
 - 📋 **Watchlist**: Keep track of the anime you want to watch later.
 - 🌙 **Dark Mode**: Enjoy a stunning dark theme for late-night binging.
 - 📱 **Responsive Design**: Optimized for both desktop and mobile devices.
-
----
-
-## Demo
-
-Check out a live demo here: [Yanime Live Demo](https://yanime-one.vercel.app) (Add the link to your deployed app)
 
 ---
 
