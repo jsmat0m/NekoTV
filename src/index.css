@@ -153,3 +153,20 @@ input:focus {
   color: #fff;
   opacity: 0.5;
 }
+
+
+
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+
+.logo-hover-effect {
+  transition: all 0.3s ease-out;
+}
+
+.logo-hover-effect:hover {
+  animation: gentle-pulse 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(255, 111, 97, 0.5));
+}
