@@ -38,20 +38,28 @@ const DetailPage = () => {
   }
 
   return (
-    <main className={`${bigPoster ? "h-dvh  overflow-hidden" : ""}`}>
+    <main className={`${bigPoster ? "h-dvh overflow-hidden" : ""}`}>
+      {/* Big Poster Modal */}
       {bigPoster && (
-        <div className="bigposter absolute flex justify-center items-center h-full w-full z-[100] bg-[#222831b4]">
-          <div className="poster bg-lightbg rounded-md flex aspect-auto object-cover flex-col items-end relative">
+        <div className="bigposter fixed inset-0 flex justify-center items-center z-[100]">
+          {/* Background overlay with gradient like homepage */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(31,79,112,0.7)] via-[rgba(76,52,140,0.6)] to-[rgba(0,0,0,0.9)] backdrop-blur-sm"></div>
+
+          {/* Poster wrapper with shadow */}
+          <div className="poster relative bg-black/50 rounded-xl shadow-2xl overflow-hidden">
+            {/* Close button */}
             <button
               onClick={() => setBigPoster(null)}
-              className="absolute hover:text-primary bg-black text-2xl"
+              className="absolute top-2 right-2 text-white text-2xl hover:text-primary transition-colors"
             >
               <FaWindowClose />
             </button>
+
+            {/* Poster image */}
             <img
               src={bigPoster}
               alt="poster"
-              className="rounded-md h-full w-full"
+              className="rounded-xl max-h-[90vh] max-w-[90vw] object-contain shadow-xl"
             />
           </div>
         </div>
@@ -61,6 +69,7 @@ const DetailPage = () => {
         <title>{titleId}</title>
         <meta property="og:title" content="detail - NekoTV" />
       </Helmet>
+
       {data && !isLoading ? (
         <div className={`DetailPage relative pt-10 ${bigPoster && "blur-sm"} `}>
           <InfoLayout showBigPoster={showBigPoster} data={data} />
