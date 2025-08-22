@@ -27,13 +27,13 @@ const Footer = () => {
           NekoTV does not store any files on its servers, <br /> it only links
           to the media hosted on third-party services.{" "}
         </p>
-        <p className="mt-4 text-gray-300">© NekoTV All rights reserved.</p>
+        <p className="mt-4 text-gray-400">© NekoTV All rights reserved.</p>
         <div className="btns flex justify-center my-2 items-center gap-2">
           <a
             href="https://github.com/jsmat0m"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-white text-2xl"
+            className="text-gray-400 hover:text-white text-2xl"
           >
             <FaGithub />
           </a>
@@ -41,7 +41,7 @@ const Footer = () => {
             href="https://t.me/jsmat0m"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-blue-300 text-2xl"
+            className="text-gray-400 hover:text-blue-300 text-2xl"
           >
             <FaTelegram />
           </a>
