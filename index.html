@@ -50,16 +50,16 @@
         padding: 0;
         height: 100%;
         font-family: 'Nunito', 'Roboto', sans-serif;
-        background: #000; /* fallback behind bg-grid */
       }
 
-      /* Theme colors (same palette, kept for consistency) */
+      /* Theme colors (change here to update the site) */
       :root {
-        --logo-primary: #7dd3fc; /* blue (kept) */
-        --logo-accent:  #a78bfa; /* purple (kept) */
+        --logo-primary: #7dd3fc; /* blue */
+        --logo-accent:  #a78bfa; /* purple */
+        --bg-dark:      #071025; /* fallback/base */
       }
 
-      /* Background container - darkened two-color gradient with grid */
+      /* Background container - keeps the grid and adds two-color gradient */
       .bg-grid {
         position: fixed;
         inset: 0;
@@ -67,17 +67,15 @@
         pointer-events: none;
         overflow: hidden;
 
-        /* base color (purple -> blue) - will be darkened by overlay */
+        /* Base diagonal gradient (purple -> blue) with a soft radial highlight */
         background:
-          radial-gradient(circle at 12% 18%, rgba(255,255,255,0.02), transparent 10%),
+          radial-gradient(circle at 12% 18%, rgba(255,255,255,0.06), transparent 12%),
           linear-gradient(135deg, var(--logo-accent) 0%, var(--logo-primary) 100%);
+
         background-size: cover;
       }
 
-      /* Pseudo layers:
-         - ::before = dark overlay (makes the whole background much darker)
-         - ::after  = black grid lines on top (kept from original grid design)
-      */
+      /* Grid overlay and vignette/texture using pseudo elements */
       .bg-grid::before,
       .bg-grid::after {
         content: "";
@@ -86,38 +84,34 @@
         pointer-events: none;
       }
 
-      /* DARK OVERLAY — increases perceived darkness without changing palette */
+      /* Thin grid lines (kept from original design — DO NOT REMOVE) */
       .bg-grid::before {
-        background: linear-gradient(180deg, rgba(2,6,15,0.72), rgba(2,6,15,0.62));
-        /* If you want an even darker look, raise the alpha (e.g. 0.8) */
-        mix-blend-mode: normal;
-        z-index: 0;
-      }
-
-      /* BLACK GRID LINES — kept from original style but using black */
-      .bg-grid::after {
-        /* black 1px lines (use rgba to tune intensity) */
         background-image:
-          linear-gradient(0deg, rgba(0,0,0,0.75) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0,0,0,0.75) 1px, transparent 1px);
-        background-size: 40px 40px; /* original spacing */
+          linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 40px 40px; /* original grid spacing preserved */
         mix-blend-mode: overlay;
-        opacity: 0.95; /* tweak to control visibility */
-        z-index: 1;
+        opacity: 0.9;
       }
 
-      /* Keep subtle vignette/texture if desired — optional, below grid */
-      /* If you prefer no vignette, comment out this rule */
-      .bg-grid .vignette {
-        display: none; /* kept for clarity - not used here */
+      /* Vignette + subtle texture beneath grid */
+      .bg-grid::after {
+        background:
+          radial-gradient(ellipse at center, rgba(11,16,32,0.18), transparent 45%),
+          linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+        mix-blend-mode: multiply;
+        opacity: 0.9;
       }
 
-      /* Optional: very slow animated shift (commented out) */
+      /* Optional: a super-slow subtle movement — COMMENTED OUT by default.
+         Uncomment both blocks to enable a gentle animated shift of the gradient.
+         It's intentionally very slow (35s) to remain unobtrusive. */
       /*
       .bg-grid {
         background-size: 300% 300%;
         animation: slowShift 35s linear infinite;
       }
+
       @keyframes slowShift {
         0%   { background-position: 0% 50%; }
         50%  { background-position: 100% 50%; }
@@ -127,8 +121,7 @@
 
       /* Small-screen tweak: slightly reduce grid contrast on tiny devices */
       @media (max-width: 480px) {
-        .bg-grid::after { opacity: 0.7; background-size: 32px 32px; }
-        .bg-grid::before { background: linear-gradient(180deg, rgba(2,6,15,0.78), rgba(2,6,15,0.68)); }
+        .bg-grid::before { opacity: 0.6; background-size: 32px 32px; }
       }
     </style>
   </head>
