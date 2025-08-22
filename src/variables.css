@@ -3,35 +3,12 @@
 @tailwind utilities;
 
 :root {
-  /* Primary palette */
-  --primary: #269cfc;       /* Bright blue (logo primary) */
-  --accent: #a78bfa;        /* Purple accent (logo secondary) */
-  --soft-accent: #b1b2ff;   /* Lighter purple for subtle highlights */
-
-  /* Backgrounds */
-  --background: #0B1220;    /* Main dark background */
-  --lightbg: #131A30;       /* Panels, cards, hover states */
-  --card: #131A30;          /* Card/panel background */
-  --hoverbg: #1C2640;       /* Slightly lighter hover background */
-
-  /* Buttons */
-  --btn-primary-bg: linear-gradient(135deg, var(--accent), var(--primary));
-  --btn-primary-color: #0b1020; /* Dark text for primary buttons */
-  --btn-secondary-bg: var(--lightbg); 
-  --btn-secondary-color: var(--primary); 
-  --btn-secondary-border: var(--primary);
-
-  /* Text */
-  --text-primary: #e0e6f1;    /* Main text */
-  --text-secondary: #a3a9b8;  /* Secondary / meta text */
-  --text-tertiary: #6C7080;   /* Disabled / less important text */
-  --link-color: var(--primary);
-  --link-hover: var(--accent);
-
-  /* Accent highlights */
-  --yellow: #F9ED69;         /* Badges, notifications */
-  --pink: #F2BED1;           /* Minor UI highlights */
-
-  /* Grid / overlays */
-  --grid-color: #000000;      /* Grid lines on dark background */
+  --primary: #269cfc;
+  --background: #101B2A;
+  --lightbg: #101B2A;
+  --card: #101B2A;
+  --btnbg: #101B2A;
+  --yellow: #f9ed69;
+  --purple: #b1b2ff;
+  --pink: #f2bed1;
 }
