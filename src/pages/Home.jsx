@@ -41,12 +41,12 @@ const Home = () => {
     <div className="relative">
       <Helmet>
         <title>
-          Watch Anime Online, Free Anime Streaming Online on Yanime Anime
+          Watch Anime Online, Free Anime Streaming Online on NekoTV Anime
           Website
         </title>
         <meta
           name="Description"
-          content=" Yanime Is a Free No ADS Anime Site To Watch Free Anime."
+          content=" NekoTV Is a Free No ADS Anime Site To Watch Free Anime."
         />
         <meta property="og:title" content="home - watanuki" />
       </Helmet>
