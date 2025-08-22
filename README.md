@@ -21,7 +21,7 @@
 - **Frontend**: React
 - **Styling**: Tailwind CSS
 - **State Management**: React Context API / Redux (mention whichever you're using)
-- **API**: Integration with [Yanime-API](https://github.com/jsmat0m/Yanime-API) or other anime databases (if applicable)
+- **API**: Integration with [NekoTV-API](https://github.com/jsmat0m/NekoTV-API) or other anime databases (if applicable)
 
 ---
 
@@ -33,13 +33,13 @@ Make sure you have installed bun js and pnpm
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/jsmat0m/Yanime.git
+   git clone https://github.com/jsmat0m/NekoTV.git
    ```
 
 2. navigate to project
 
    ```bash
-     cd Yanime
+     cd NekoTV
    ```
 
 3. Install all the dependencies.
