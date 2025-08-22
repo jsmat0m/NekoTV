@@ -40,13 +40,15 @@ const Sidebar = () => {
         isSidebarOpen ? "translate-x-0" : "translate-x-[-100%]"
       }`}
     >
+      {/* Improved Close Menu Button */}
       <button
-        className="w-full pt-4 pl-2 flex items-center gap-2 hover:text-[#7dd3fc] text-base md:text-xl"
+        className="w-full flex items-center gap-2 px-4 py-3 mt-2 mb-4 rounded-lg bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(125,211,252,0.1)] hover:text-[#7dd3fc] text-base md:text-xl transition-all duration-200 transform hover:scale-105"
         onClick={sidebarHandler}
       >
-        <FaAngleLeft />
-        <span>Close Menu</span>
+        <FaAngleLeft className="text-[#7dd3fc]" />
+        <span className="font-semibold">Close Menu</span>
       </button>
+
       <ul className="py-4">
         {list.map((item) => (
           <li
