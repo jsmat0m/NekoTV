@@ -50,13 +50,13 @@
         padding: 0;
         height: 100%;
         font-family: 'Nunito', 'Roboto', sans-serif;
+        background-color: #030518; /* darker fallback background */
       }
 
-      /* Theme colors (change here to update the site) */
+      /* Theme colors */
       :root {
-        --logo-primary: #7dd3fc; /* blue */
-        --logo-accent:  #a78bfa; /* purple */
-        --bg-dark:      #071025; /* fallback/base */
+        --logo-primary: #4f94b8; /* darker blue */
+        --logo-accent:  #6b4da8; /* darker purple */
       }
 
       /* Background container - keeps the grid and adds two-color gradient */
@@ -67,11 +67,9 @@
         pointer-events: none;
         overflow: hidden;
 
-        /* Base diagonal gradient (purple -> blue) with a soft radial highlight */
         background:
-          radial-gradient(circle at 12% 18%, rgba(255,255,255,0.06), transparent 12%),
+          radial-gradient(circle at 12% 18%, rgba(255,255,255,0.03), transparent 12%),
           linear-gradient(135deg, var(--logo-accent) 0%, var(--logo-primary) 100%);
-
         background-size: cover;
       }
 
@@ -84,12 +82,12 @@
         pointer-events: none;
       }
 
-      /* Thin grid lines (kept from original design — DO NOT REMOVE) */
+      /* Thin grid lines (now black/dark) */
       .bg-grid::before {
         background-image:
-          linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-        background-size: 40px 40px; /* original grid spacing preserved */
+          linear-gradient(0deg, rgba(0,0,0,0.3) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,0,0,0.3) 1px, transparent 1px);
+        background-size: 40px 40px; /* keep original spacing */
         mix-blend-mode: overlay;
         opacity: 0.9;
       }
@@ -97,36 +95,20 @@
       /* Vignette + subtle texture beneath grid */
       .bg-grid::after {
         background:
-          radial-gradient(ellipse at center, rgba(11,16,32,0.18), transparent 45%),
-          linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+          radial-gradient(ellipse at center, rgba(0,0,0,0.35), transparent 45%),
+          linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.08));
         mix-blend-mode: multiply;
         opacity: 0.9;
       }
 
-      /* Optional: a super-slow subtle movement — COMMENTED OUT by default.
-         Uncomment both blocks to enable a gentle animated shift of the gradient.
-         It's intentionally very slow (35s) to remain unobtrusive. */
-      /*
-      .bg-grid {
-        background-size: 300% 300%;
-        animation: slowShift 35s linear infinite;
-      }
-
-      @keyframes slowShift {
-        0%   { background-position: 0% 50%; }
-        50%  { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      */
-
-      /* Small-screen tweak: slightly reduce grid contrast on tiny devices */
+      /* Small-screen tweak */
       @media (max-width: 480px) {
         .bg-grid::before { opacity: 0.6; background-size: 32px 32px; }
       }
     </style>
   </head>
   <body>
-    <!-- Background grid (kept) -->
+    <!-- Background grid -->
     <div class="bg-grid"></div>
 
     <!-- React root -->
