@@ -4,8 +4,8 @@
 
 :root {
   --primary: #a29bfc;
-  --background: #101B2A;
-  --lightbg: #101B2A;
+  --background: #a29bfc;
+  --lightbg: #8ac5fe;
   --card: #8ac5fe;
   --btnbg: #a29bfc;
   --yellow: #fff8b0;
@@ -13,3 +13,5 @@
   --pink: #f9e0ea;
 
 }
+
+
