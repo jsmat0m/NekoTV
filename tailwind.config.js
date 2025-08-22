@@ -2,7 +2,7 @@
 
 const colors = {
   primary: "#a29bfc",
-  background: "#a29bfc",
+  background: "#145183",
   lightbg: "#a29bfc",
   card: "#101B2A",
   btnbg: "#8ac5fe",
