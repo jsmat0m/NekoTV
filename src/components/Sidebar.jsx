@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Genres from "./Genres";
 
 import { useEffect } from "react";
-import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleLeft, FaHome, FaStar, FaFilm, FaClock, FaList, FaFire, FaArrowUp, FaHeart } from "react-icons/fa";
 
 const Sidebar = () => {
   const isSidebarOpen = useSidebarStore((state) => state.isSidebarOpen);
@@ -13,35 +13,35 @@ const Sidebar = () => {
   const key = location.key;
 
   useEffect(() => {
-    isSidebarOpen ? sidebarHandler() : null;
+    if (isSidebarOpen) sidebarHandler();
   }, [key]);
 
   const list = [
-    { name: "Home", link: "/home" },
-    { name: "Subbed Anime", link: "/animes/subbed-anime" },
-    { name: "Dubbed Anime", link: "/animes/dubbed-anime" },
-    { name: "Most Popular", link: "/animes/most-popular" },
-    { name: "Top Airing", link: "/animes/top-airing" },
-    { name: "Most Favorite", link: "/animes/most-favorite" },
-    { name: "Latest Completed", link: "/animes/completed" },
-    { name: "Recently Added", link: "/animes/recently-added" },
-    { name: "Recently Updated", link: "/animes/recently-updated" },
-    { name: "Top Upcoming", link: "/animes/top-upcoming" },
-    { name: "A-Z List", link: "/animes/az-list/a" },
-    { name: "Movies", link: "/animes/movie" },
-    { name: "OVAs", link: "/animes/ova" },
-    { name: "ONAs", link: "/animes/ona" },
-    { name: "Specials", link: "/animes/special" },
+    { name: "Home", link: "/home", icon: <FaHome /> },
+    { name: "Subbed Anime", link: "/animes/subbed-anime", icon: <FaStar /> },
+    { name: "Dubbed Anime", link: "/animes/dubbed-anime", icon: <FaStar /> },
+    { name: "Most Popular", link: "/animes/most-popular", icon: <FaFire /> },
+    { name: "Top Airing", link: "/animes/top-airing", icon: <FaArrowUp /> },
+    { name: "Most Favorite", link: "/animes/most-favorite", icon: <FaHeart /> },
+    { name: "Latest Completed", link: "/animes/completed", icon: <FaClock /> },
+    { name: "Recently Added", link: "/animes/recently-added", icon: <FaClock /> },
+    { name: "Recently Updated", link: "/animes/recently-updated", icon: <FaClock /> },
+    { name: "Top Upcoming", link: "/animes/top-upcoming", icon: <FaArrowUp /> },
+    { name: "A-Z List", link: "/animes/az-list/a", icon: <FaList /> },
+    { name: "Movies", link: "/animes/movie", icon: <FaFilm /> },
+    { name: "OVAs", link: "/animes/ova", icon: <FaFilm /> },
+    { name: "ONAs", link: "/animes/ona", icon: <FaFilm /> },
+    { name: "Specials", link: "/animes/special", icon: <FaStar /> },
   ];
 
   return (
     <div
-      className={`sidebar transition-all fixed overflow-scroll h-full z-[100] inset-0 w-64 md:w-80  bg-[rgba(255,255,255,.1);] ${
+      className={`sidebar transition-all fixed overflow-scroll h-full z-[100] inset-0 w-64 md:w-80 bg-[rgba(31,79,112,0.95)] ${
         isSidebarOpen ? "translate-x-0" : "translate-x-[-100%]"
       }`}
     >
       <button
-        className="w-full pt-4 pl-2 flex items-center gap-2 hover:text-primary text-base md:text-xl"
+        className="w-full pt-4 pl-2 flex items-center gap-2 hover:text-[#7dd3fc] text-base md:text-xl"
         onClick={sidebarHandler}
       >
         <FaAngleLeft />
@@ -52,12 +52,13 @@ const Sidebar = () => {
           <li
             key={item.link}
             onClick={sidebarHandler}
-            className=" py-4 pl-4 hover:text-primary  text-base md:text-lg border-b border-[rgba(255,255,255,.05)] w-full"
+            className="py-4 pl-4 hover:text-[#a78bfa] text-base md:text-lg border-b border-[rgba(255,255,255,.05)] w-full flex items-center gap-2"
           >
+            {item.icon}
             <Link to={item.link}>{item.name}</Link>
           </li>
         ))}
-        <li className=" py-4 pl-2 text-base md:text-lg w-full">Genres</li>
+        <li className="py-4 pl-2 text-base md:text-lg w-full">Genres</li>
         <Genres
           event={sidebarHandler}
           className="w-1/2 my-2 pl-2 hover:opacity-[.7]"
