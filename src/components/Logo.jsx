@@ -31,7 +31,7 @@ const Logo = () => {
           transition: 'transform 0.3s ease-out 0.1s'
         }}>T</span>
         <span className="inline-block" style={{ 
-          color: '#FF3F2B', 
+          color: 'FF7E57', 
           transform: isHovered ? 'rotate(5deg)' : 'none',
           transition: 'transform 0.3s ease-out 0.15s'
         }}>V</span>
