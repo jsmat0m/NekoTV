@@ -37,7 +37,7 @@ const ContinueWatching = () => {
         {continueList.map((item, index) => (
           <div
             key={item.animeId + "-" + item.episodeId}
-            className="bg-[#145183] rounded-lg p-3 relative cursor-pointer hover:opacity-90"
+            className="bg-[#a29bfc] rounded-lg p-3 relative cursor-pointer hover:opacity-90"
           >
             <button
               className="absolute top-1 right-1 text-white-600 font-extrabold text-lg"
@@ -69,3 +69,4 @@ const ContinueWatching = () => {
 };
 
 export default ContinueWatching;
+
