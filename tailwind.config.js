@@ -3,8 +3,8 @@
 const colors = {
   primary: "#a29bfc",
   background: "#a29bfc",
-  lightbg: "#101B2A",
-  card: "#a29bfc",
+  lightbg: "#a29bfc",
+  card: "#101B2A",
   btnbg: "#8ac5fe",
   yellow: "#fff8b0",
   purple: "#d6d6ff",
