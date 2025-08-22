@@ -18,12 +18,12 @@ const Logo = () => {
         }}
       >
         <span className="inline-block" style={{ 
-          color: '#FF804A', 
+          color: '#269cfc', 
           transform: isHovered ? 'rotate(-5deg)' : 'none',
           transition: 'transform 0.3s ease-out'
         }}>ネ</span>
         <span className="inline-block" style={{ 
-          color: '#FF7F50', 
+          color: '#269cfc', 
           transform: isHovered ? 'translateY(-3px)' : 'none',
           transition: 'transform 0.3s ease-out 0.05s'
         }}>コ</span>
