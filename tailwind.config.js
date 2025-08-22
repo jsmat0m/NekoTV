@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = {
-  primary: "#269cfc",
+  primary: "#a29bfc",
   background: "#101B2A",
   lightbg: "#101B2A",
-  card: "#101B2A",
-  btnbg: "#101B2A",
-  yellow: #fff8b0;
-  purple: #d6d6ff;
-  pink: #f9e0ea;
+  card: "#8ac5fe",
+  btnbg: "#a29bfc",
+  yellow: "#fff8b0";
+  purple: "#d6d6ff";
+  pink: "#f9e0ea";
   lighttext: "#ccc",
 };
 export default {
@@ -20,5 +20,6 @@ export default {
   },
   plugins: [],
 };
+
 
 
