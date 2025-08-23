@@ -6,9 +6,9 @@ const colors = {
   lightbg: "transparent",
   card: "#101B2A",
   btnbg: "#145183",
-  yellow: "#fff8b0",
-  purple: "#d6d6ff",
-  pink: "#f9e0ea",
+  yellow: "#F9ED69",
+  purple: "#B1B2FF",
+  pink: "#F2BED1",
   lighttext: "#ccc",
 };
 export default {
