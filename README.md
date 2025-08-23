@@ -31,10 +31,6 @@ It’s designed to give anime fans a **fast, minimal, and immersive** streaming 
 - [Bun](https://bun.sh/) runtime  
 - [pnpm](https://pnpm.io/) *(optional, for dependency management)*  
 
-### # Prerequisites
-
-Make sure you have installed bun js and pnpm
-
 ### 🔧 Installation
 
 1. **Clone the Repository**:
