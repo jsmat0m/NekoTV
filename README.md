@@ -66,9 +66,7 @@ bun run dev
 <h2 style="color:#a29bfc;">📌 Roadmap</h2>
 
 - ✅ Initial release  
-- ⏳ Add user authentication  
-- ⏳ Offline watchlist  
-- ⏳ Multi-language support  
+- ⏳ Add user authentication   
 - ⏳ Additional streaming sources  
 
 ---
