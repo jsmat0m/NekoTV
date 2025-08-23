@@ -5,7 +5,7 @@ const colors = {
   background: "#145183",
   lightbg: "transparent",
   card: "#101B2A",
-  btnbg: "#89bcf8",
+  btnbg: "#145183",
   yellow: "#F9ED69",
   purple: "#B1B2FF",
   pink: "#F2BED1",
