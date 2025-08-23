@@ -90,7 +90,7 @@ bun run dev
 
 If you like this project, **leave a star** 🌟 on GitHub!
 
-<h2 style="color:#a29bfc;">⭐ GitHub Stats & Stars</h2> <p align="center"> <!-- Repo Stats Card --> <img src="https://github-readme-stats.vercel.app/api?username=jsmat0m&show_icons=true&theme=react&hide_border=true" alt="GitHub Stats"/> <!-- Top Languages Card --> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jsmat0m&layout=compact&theme=react&hide_border=true" alt="Top Languages"/> </p> <p align="center"> <!-- GitHub Stars Button --> <a href="https://github.com/jsmat0m/NekoTV"> <img src="https://img.shields.io/github/stars/jsmat0m/NekoTV?style=social&labelColor=%23a29bfc&logo=github" alt="GitHub Stars"/> </a> </p>
+[![Stargazers over time](https://starchart.cc/jsmat0m/NekoTV.svg?variant=adaptive)](https://starchart.cc/jsmat0m/NekoTV)
 
 <p align="center">
   Each star represents a contributor or supporter — keep the love flowing! 💜
