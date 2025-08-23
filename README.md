@@ -41,7 +41,7 @@ It’s designed to give anime fans a **fast, minimal, and immersive** streaming 
 2. navigate to project
 
    ```bash
-     cd NekoTV
+   cd NekoTV
    ```
 
 3. Install all the dependencies.
