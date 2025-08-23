@@ -1,35 +1,41 @@
-# NekoTV
+# 🐾 NekoTV
 
-
-**NekoTV** is a modern, sleek anime streaming web application built with **React** and styled using **Tailwind CSS**. The app is designed to provide anime enthusiasts with a seamless and enjoyable streaming experience.
-
----
-
-## Features
-
-- 🌟 **Beautiful UI**: Minimalistic and responsive design powered by Tailwind CSS.
-- 🔍 **Search & Discover**: Find your favorite anime with ease.
-- 🎥 **Stream Anime**: High-quality streaming for your favorite shows.
-- 📋 **Watchlist**: Keep track of the anime you want to watch later.
-- 🌙 **Dark Mode**: Enjoy a stunning dark theme for late-night binging.
-- 📱 **Responsive Design**: Optimized for both desktop and mobile devices.
+**NekoTV** is a modern, sleek **anime streaming platform** built with **React** and styled using **Tailwind CSS**.  
+It’s designed to give anime fans a **fast, minimal, and immersive** streaming experience.  
 
 ---
 
-## Tech Stack
+## 🚩 Highlights
 
-- **Frontend**: React
-- **Styling**: Tailwind CSS
-- **State Management**: React Context API / Redux (mention whichever you're using)
-- **API**: Integration with [NekoTV-API](https://github.com/jsmat0m/NekoTV-API) or other anime databases (if applicable)
+- ✨ **Clean UI** – Minimal and responsive with Tailwind CSS  
+- 🔎 **Search & Discover** – Find anime instantly  
+- 📺 **HD Streaming** – Smooth playback experience  
+- 📌 **Watchlist** – Save shows for later  
+- 🌘 **Dark Mode** – Perfect for night binging  
+- 📱 **Responsive Design** – Works on desktop, tablet, and mobile  
 
 ---
 
-## <span id="installation">💻 Installation</span>
+## 🧩 Tech Overview
+
+- **Framework**: React  
+- **Styling**: Tailwind CSS  
+- **State Management**: Context API / Redux  
+- **Data Source**: [NekoTV-API](https://github.com/jsmat0m/NekoTV-API) or other anime providers  
+
+---
+
+## ⚙️ Getting Started
+
+### ✅ Requirements
+- [Bun](https://bun.sh/) runtime  
+- [pnpm](https://pnpm.io/) *(optional, for dependency management)*  
 
 ### # Prerequisites
 
 Make sure you have installed bun js and pnpm
+
+### 🔧 Installation
 
 1. **Clone the Repository**:
    ```bash
