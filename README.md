@@ -91,3 +91,15 @@ bun run dev
 If you like this project, **leave a star** 🌟 on GitHub!
 
 [![GitHub stars](https://img.shields.io/github/stars/jsmat0m/NekoTV?style=social&labelColor=%23a29bfc&logo=github)](https://github.com/jsmat0m/NekoTV)
+
+---
+
+<h2 style="color:#a29bfc;">🌟 Star Graph</h2>
+
+<p align="center">
+  <img src="https://i.postimg.cc/3x9r0wJZ/cute-stars-graph.png" alt="Cartoon Star Graph" width="600"/>
+</p>
+
+<p align="center">
+  Each star represents a contributor or supporter — keep the love flowing! 💜
+</p>
