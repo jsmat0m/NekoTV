@@ -1,18 +1,17 @@
-Perfect! I can integrate your **project logo** for both frontend and backend at the top of your README and also add the **star badges** we discussed earlier. Here’s a polished version with the logo, highlights, tech overview, installation, and star badges:
-
-````markdown
-# 🐾 NekoTV
+<!-- Title with gradient/mixed color -->
+<h1 align="center">
+  <span style="background: linear-gradient(90deg, #a29bfc, #89bcf8); -webkit-background-clip: text; color: transparent;">
+    🐾 NekoTV
+  </span>
+</h1>
 
 <p align="center">
-  <img src="https://i.postimg.cc/v8pFMn3g/home-Banner-B6b-Dd-O1w.png" alt="NekoTV Logo" width="500"/>
+  <img src="./logo.png" alt="NekoTV Logo" width="500"/>
 </p>
-
-**NekoTV** is a modern, sleek **anime streaming platform** built with **React** and styled using **Tailwind CSS**.  
-It’s designed to give anime fans a **fast, minimal, and immersive** streaming experience.  
 
 ---
 
-## 🚩 Highlights
+<h2 style="color:#a29bfc;">🚩 Highlights</h2>
 
 - ✨ **Clean UI** – Minimal and responsive with Tailwind CSS  
 - 🔎 **Search & Discover** – Find anime instantly  
@@ -23,59 +22,27 @@ It’s designed to give anime fans a **fast, minimal, and immersive** streaming 
 
 ---
 
-## 🧩 Tech Overview
+<h2 style="color:#a29bfc;">🧩 Tech Overview</h2>
 
 - **Framework**: React  
 - **Styling**: Tailwind CSS  
 - **State Management**: Context API / Redux  
-- **Data Source**: [NekoTV-API](https://github.com/jsmat0m/NekoTV-API) or other anime providers  
+- **Data Source**: [NekoTV-API](https://github.com/jsmat0m/NekoTV-API)  
 
 ---
 
-## ⚙️ Getting Started
+<h2 style="color:#a29bfc;">⚙️ Getting Started</h2>
 
-### ✅ Requirements
-- [Bun](https://bun.sh/) runtime  
-- [pnpm](https://pnpm.io/) *(optional, for dependency management)*  
-
-### 🔧 Installation
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/jsmat0m/NekoTV.git
-````
-
-2. Navigate to the project
-
-   ```bash
-   cd NekoTV
-   ```
-
-3. Install all dependencies
-
-   ```bash
-   bun install
-   ```
-
-4. Start the server
-
-   ```bash
-   bun run dev
-   ```
-
-   Now the server should be running on [http://localhost:5173](http://localhost:5173)
+<!-- Installation instructions here -->
 
 ---
 
-## ⭐ Support
+<h2 style="color:#a29bfc;">⭐ Support</h2>
 
 If you like this project, **leave a star** 🌟 on GitHub!
 
 ### 🌸 Frontend Repository
-
-[![GitHub stars](https://img.shields.io/github/stars/jsmat0m/NekoTV?style=social\&labelColor=%23a29bfc\&logo=github)](https://github.com/jsmat0m/NekoTV)
+[![GitHub stars](https://img.shields.io/github/stars/jsmat0m/NekoTV?style=social&labelColor=%23a29bfc&logo=github)](https://github.com/jsmat0m/NekoTV)
 
 ### 🌊 API Repository
-
-[![GitHub stars](https://img.shields.io/github/stars/jsmat0m/NekoTV-API?style=social\&labelColor=%2389bcf8\&logo=github)](https://github.com/jsmat0m/NekoTV-API)
-
+[![GitHub stars](https://img.shields.io/github/stars/jsmat0m/NekoTV-API?style=social&labelColor=%2389bcf8&logo=github)](https://github.com/jsmat0m/NekoTV-API)
