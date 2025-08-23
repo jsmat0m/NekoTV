@@ -1,14 +1,3 @@
-Got it! I’ve created a **complete, polished `README.md`** for **NekoTV** with:
-
-* Gradient title
-* Project logo
-* Highlights, tech stack, installation instructions
-* Contributors section
-* Roadmap, contributing guide
-* **Cartoon-style GitHub stats + star chart + contributors avatars** at the bottom
-
-Here’s the full file:
-
 ````markdown
 <!-- Title with gradient -->
 <h1 align="center">
