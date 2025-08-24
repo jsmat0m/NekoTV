@@ -11,8 +11,7 @@
 
 ---
 
-<h2 style="color:#a29bfc;">🚩 Project Description</h2>
-NekoTV is a sleek, minimal, and responsive anime streaming platform built with React and Tailwind CSS. It allows users to search, discover, and watch anime seamlessly while offering features like:
+<h2 style="color:#a29bfc;">🚩 Project Description</h2> **NekoTV** is a sleek, minimal, and fully responsive anime streaming platform built with **React** and **Tailwind CSS**. It empowers users to **search, discover, and watch anime** seamlessly while offering a rich set of features:
 
 - ✨ **Clean UI** – Minimal, responsive, and sleek with Tailwind CSS  
 - 🔎 **Search & Discover** – Instantly find anime  
