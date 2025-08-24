@@ -81,7 +81,7 @@ bun run dev
 This project uses code from **NekoTV** by **JsmAtom × AziF**. Licensed under the Custom BY-NC License, © 2024 JsmAtom × AziF.  
 GitHub: [https://github.com/jsmat0m/NekoTV](https://github.com/jsmat0m/NekoTV)
 
-This project is governed by a **Custom BY-NC License**. What does this entail? Simply put, you are permitted to utilize, distribute, and modify the code for non-commercial purposes. However, it is imperative that due credit is accorded to our platform. Any commercial utilization of this code is strictly prohibited. For comprehensive details, please refer to the [LICENSE](LICENSE) file. Should you have inquiries or require special permissions, do not hesitate to contact us.
+This project is governed by a **Custom BY-NC License**. What does this entail? Simply put, you are permitted to utilize, distribute, and modify the code for non-commercial purposes. However, it is imperative that due credit is accorded to our platform. Any commercial utilization of this code is strictly prohibited. For comprehensive details, please refer to the [LICENSE](LICENSE.md) file. Should you have inquiries or require special permissions, do not hesitate to contact us.
 
 <h2 style="color:#a29bfc;">🤝 Contributing</h2>
 
