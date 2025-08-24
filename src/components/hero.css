@@ -179,10 +179,6 @@
     display: none;
   }
 }
-
-
-
-
 .swiper-button-prev,
 .swiper-button-next {
   display: none !important;
@@ -242,4 +238,29 @@
     font-size: 16px;
   }
 }
+
+
+
+
+.nevi-small {
+  gap: 6px;
+}
+
+.nevi-small .nevi-btn {
+  --size: 36px;
+  width: var(--size);
+  height: var(--size);
+  font-size: 14px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  transform-origin: center;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+  .nevi-small .nevi-btn {
+    --size: 32px;
+    font-size: 13px;
+  }
+}
+
 
