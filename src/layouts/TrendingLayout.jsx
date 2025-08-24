@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -7,15 +7,42 @@ import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 import Heading from "../components/Heading";
 
-import catIcon from "../assets/cat.svg"; 
+import catIcon from "../assets/cat.svg";
+
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 const TrendingLayout = ({ data }) => {
+  const swiperRef = useRef(null);
+
   return (
     <div className="trending mt-5">
-      <Heading className="mb-2">Trending</Heading>
+      {/* Header: Title + custom nav (top-right aligned) */}
+      <div className="flex items-center justify-between mb-2">
+        <Heading>Trending</Heading>
+
+        {/* custom nevi nav aligned with title */}
+        <div className="nevi-icons nevi-small" aria-hidden={false}>
+          <button
+            className="nevi-btn"
+            aria-label="Previous trending"
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            <FaAngleLeft />
+          </button>
+          <button
+            className="nevi-btn"
+            aria-label="Next trending"
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            <FaAngleRight />
+          </button>
+        </div>
+      </div>
+
       <Swiper
         modules={[Navigation]}
-        navigation
+        navigation={false} // disable default nav because we use custom buttons
+        onSwiper={(s) => (swiperRef.current = s)}
         breakpoints={{
           0: { slidesPerView: 3 },
           800: { slidesPerView: 4 },
