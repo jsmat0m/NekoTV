@@ -16,14 +16,12 @@ const Header = () => {
   const searchContainerRef = useRef(null);
   const navigate = useNavigate();
 
-  // Auto-focus input when search bar opens
   useEffect(() => {
     if (showSearchBar && inputRef.current) {
       inputRef.current.focus();
     }
   }, [showSearchBar]);
 
-  // Close search when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -42,7 +40,6 @@ const Header = () => {
     };
   }, [showSearchBar]);
 
-  // Close search on escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape" && showSearchBar) {
@@ -54,7 +51,6 @@ const Header = () => {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [showSearchBar]);
 
-  // Debounce input value
   const changeInput = (e) => {
     const newValue = e.target.value;
     setValue(newValue);
@@ -65,23 +61,28 @@ const Header = () => {
     }, 300);
   };
 
-  // React Query hook
   const { data, isLoading, isError } = useApi(
     debouncedValue.length > 2 ? `/suggestion?keyword=${debouncedValue}` : null
   );
 
-  const handleSubmit = useCallback((e) => {
-    e.preventDefault();
-    if (value.trim()) {
-      navigate(`/search?keyword=${value.trim()}`);
-      resetSearch();
-    }
-  }, [value, navigate]);
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (value.trim()) {
+        navigate(`/search?keyword=${value.trim()}`);
+        resetSearch();
+      }
+    },
+    [value, navigate]
+  );
 
-  const navigateToAnimePage = useCallback((id) => {
-    navigate(`/anime/${id}`);
-    resetSearch();
-  }, [navigate]);
+  const navigateToAnimePage = useCallback(
+    (id) => {
+      navigate(`/anime/${id}`);
+      resetSearch();
+    },
+    [navigate]
+  );
 
   const resetSearch = useCallback(() => {
     setValue("");
@@ -99,10 +100,10 @@ const Header = () => {
 
   return (
     <div className="relative z-[100]" ref={searchContainerRef}>
-      <div className="fixed bg-card w-full py-2 shadow-md">
+      <div className="fixed w-full py-2 shadow-md bg-gradient-to-r from-gray-900/80 via-gray-800/50 to-gray-900/80 backdrop-blur-md">
         <div className="flex gap-2 px-5 md:px-10 md:gap-5 justify-between items-center">
           <div className="left flex gap-2 md:gap-5 items-center">
-            <button 
+            <button
               onClick={sidebarHandler}
               aria-label="Toggle sidebar"
               className="p-1 hover:text-primary transition-colors"
@@ -111,7 +112,7 @@ const Header = () => {
             </button>
             <Logo />
           </div>
-          
+
           <div className="right flex gap-3 md:gap-5 items-center">
             <button
               aria-label={showSearchBar ? "Close search" : "Open search"}
@@ -122,8 +123,6 @@ const Header = () => {
             </button>
           </div>
         </div>
-
-        {/* Search bar */}
         <form
           onSubmit={handleSubmit}
           className={`mt-2 px-4 transition-all duration-300 ${
@@ -161,9 +160,7 @@ const Header = () => {
             </div>
           </div>
         </form>
-
-        {/* Search results */}
-        <div 
+        <div
           className={`bg-gray-800 mt-1 mx-4 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${
             showSearchBar && value.length > 2 ? "block" : "hidden"
           }`}
