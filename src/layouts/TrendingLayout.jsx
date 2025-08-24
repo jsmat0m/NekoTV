@@ -11,6 +11,9 @@ import catIcon from "../assets/cat.svg";
 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
+/* ensure the .nevi-* styles are loaded for this layout */
+import "../components/hero.css";
+
 const TrendingLayout = ({ data }) => {
   const swiperRef = useRef(null);
 
