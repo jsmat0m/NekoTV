@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For inquiries, commercial licensing, or special permissions, please contact the authors:
 
 - GitHub: https://github.com/jsmat0m
-- Email: [az4if@proton.me]
+- Email: az4if@proton.me
 
 ---
 
