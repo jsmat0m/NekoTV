@@ -31,37 +31,40 @@ const SearchResult = () => {
         <meta property="og:title" content={`Search - ${keyword} - NekoTV`} />
       </Helmet>
 
-      <Heading>Search Results for "{keyword}"</Heading>
+      {/* side padding wrapper (same as Home) */}
+      <div className="xl:mx-10 sm:mx-2">
+        <Heading>Search Results for "{keyword}"</Heading>
 
-      {isLoading ? (
-        <Loader className="h-[100dvh]" />
-      ) : isError && !isEmpty && !isCompletelyEmpty ? (
-        <PageNotFound />
-      ) : isEmpty || isCompletelyEmpty ? (
-        <div className="text-center text-lg text-gray-400 my-10">
-          No Results Found For <strong>{keyword}</strong>.
-        </div>
-      ) : (
-        <InfiniteScroll
-          dataLength={data?.pages.flat().length || 0}
-          next={fetchNextPage}
-          hasMore={hasNextPage}
-          loader={<Loader className="h-fit" />}
-          endMessage={<Footer />}
-        >
-          <div className="flex flex-wrap justify-around items-center">
-            {pages.map((page, pageIndex) => (
-              <React.Fragment key={pageIndex}>
-                {page.data?.response?.map((item, index) => (
-                  <div key={item.id + index} className="flw-item">
-                    <Image data={item} />
-                  </div>
-                ))}
-              </React.Fragment>
-            ))}
+        {isLoading ? (
+          <Loader className="h-[100dvh]" />
+        ) : isError && !isEmpty && !isCompletelyEmpty ? (
+          <PageNotFound />
+        ) : isEmpty || isCompletelyEmpty ? (
+          <div className="text-center text-lg text-gray-400 my-10">
+            No Results Found For <strong>{keyword}</strong>.
           </div>
-        </InfiniteScroll>
-      )}
+        ) : (
+          <InfiniteScroll
+            dataLength={data?.pages.flat().length || 0}
+            next={fetchNextPage}
+            hasMore={hasNextPage}
+            loader={<Loader className="h-fit" />}
+            endMessage={<Footer />}
+          >
+            <div className="flex flex-wrap justify-around items-center">
+              {pages.map((page, pageIndex) => (
+                <React.Fragment key={pageIndex}>
+                  {page.data?.response?.map((item, index) => (
+                    <div key={item.id + index} className="flw-item">
+                      <Image data={item} />
+                    </div>
+                  ))}
+                </React.Fragment>
+              ))}
+            </div>
+          </InfiniteScroll>
+        )}
+      </div>
     </div>
   );
 };
