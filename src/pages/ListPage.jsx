@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useParams } from "react-router-dom";
 import { useInfiniteApi } from "../services/useApi";
 import Loader from "../components/Loader";
@@ -40,7 +39,6 @@ const ListPage = () => {
     return <PageNotFound />;
   }
 
-  // Title maps
   const azQueryMap = {
     "az-list": "ALL",
     other: "#",
@@ -65,7 +63,6 @@ const ListPage = () => {
     genre: "Genre",
   };
 
-  // Determine correct title
   let displayTitle = "";
 
   if (category === "az-list") {
@@ -99,31 +96,35 @@ const ListPage = () => {
         <title>{displayTitle}</title>
         <meta property="og:title" content="explore - NekoTV" />
       </Helmet>
+
       {category === "az-list" && <AZ selected={query} />}
-      {pages && !isLoading ? (
-        <InfiniteScroll
-          dataLength={data?.pages.flat().length || 0}
-          next={fetchNextPage}
-          hasMore={hasNextPage}
-          loader={<Loader className="h-fit" />}
-          endMessage={<Footer />}
-        >
-          <Heading>{displayTitle}</Heading>
-          <div className="flex flex-wrap justify-around items-center">
-            {pages?.map((page, pageIndex) => (
-              <React.Fragment key={pageIndex}>
-                {page.data.response.map((item, index) => (
-                  <div key={item.id + index} className="flw-item">
-                    <Image data={item} />
-                  </div>
-                ))}
-              </React.Fragment>
-            ))}
-          </div>
-        </InfiniteScroll>
-      ) : (
-        <Loader className="h-[100dvh]" />
-      )}
+
+      <div className="xl:mx-10 sm:mx-2">
+        {pages && !isLoading ? (
+          <InfiniteScroll
+            dataLength={data?.pages.flat().length || 0}
+            next={fetchNextPage}
+            hasMore={hasNextPage}
+            loader={<Loader className="h-fit" />}
+            endMessage={<Footer />}
+          >
+            <Heading>{displayTitle}</Heading>
+            <div className="flex flex-wrap justify-around items-center">
+              {pages?.map((page, pageIndex) => (
+                <React.Fragment key={pageIndex}>
+                  {page.data.response.map((item, index) => (
+                    <div key={item.id + index} className="flw-item">
+                      <Image data={item} />
+                    </div>
+                  ))}
+                </React.Fragment>
+              ))}
+            </div>
+          </InfiniteScroll>
+        ) : (
+          <Loader className="h-[100dvh]" />
+        )}
+      </div>
     </div>
   );
 };
