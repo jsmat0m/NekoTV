@@ -1,22 +1,22 @@
-# CUSTOM ATTRIBUTION-NONCOMMERCIAL (BY-NC) LICENSE
+CUSTOM BY-NC LICENSE (2024)
 
-© 2024 JsmAtom × AziF. All Rights Reserved.
+Copyright (c) 2024 JsmAtom × AziF
 
-This software is licensed under the **Custom BY-NC License**, granting users the freedom to:
+Permission is hereby granted to use, copy, distribute, and modify this software for NON-COMMERCIAL purposes only, provided that proper attribution is given to the original authors (NekoTV by JsmAtom × AziF). Attribution must be visible in any distribution, derivative work, or public display of this software.
 
-* Share, copy, distribute, and transmit the code.
-* Adapt, modify, transform, and build upon the code.
+Commercial use of this software or any derivative work based on it is strictly prohibited without prior written permission from the authors. Commercial use includes, but is not limited to, selling, licensing, or any exploitation of the software for financial gain.
 
-### Terms of Use
+This license grants no rights beyond those explicitly stated here. Any use of this software not explicitly allowed by this license is strictly prohibited.
 
-1. **Attribution Required**
-   Any use, redistribution, or derivative work must include clear and visible credit to the original author(s) (**JsmAtom × AziF**) and link to the project repository or official site. Attribution is mandatory.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
 
-2. **Non-Commercial Only**
-   This license **strictly prohibits commercial use**. Commercial purposes include, but are not limited to: selling, licensing, or exploiting the software for monetary gain. NekoTV is intended solely for educational, personal, or fan-based projects.
+For inquiries, commercial licensing, or special permissions, please contact the authors:
 
-3. **Permission for Commercial Use**
-   If you intend to use this project or any derivative work commercially, you must contact the author(s) directly for explicit permission. The author(s) reserve the right to grant or deny permission at their discretion.
+- GitHub: https://github.com/jsmat0m/NekoTV
+- Email: [Your Contact Email Here]
 
-4. **Scope of Rights**
-   Only the rights explicitly granted by this license are allowed. Any use not stated here is strictly prohibited.
+---
+
+Recommended Attribution Example:
+
+"This project uses code from NekoTV by JsmAtom × AziF. Licensed under the Custom BY-NC License, © 2024 JsmAtom × AziF."
