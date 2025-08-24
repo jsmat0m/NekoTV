@@ -9,7 +9,7 @@ import { MdTableRows } from "react-icons/md";
 import { HiMiniViewColumns } from "react-icons/hi2";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
-import { DiscussionEmbed } from "disqus-react"; // ✅ Added import
+import { DiscussionEmbed } from "disqus-react";
 
 const capitalizeWords = (str) => {
   return str
