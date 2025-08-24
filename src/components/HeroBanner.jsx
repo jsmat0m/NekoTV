@@ -1,5 +1,7 @@
+import React, { useRef } from "react";
 import {
   FaAngleRight,
+  FaAngleLeft,
   FaCalendarDay,
   FaCirclePlay,
   FaClock,
@@ -18,6 +20,8 @@ import SoundsInfo from "./SoundsInfo";
 import { Link } from "react-router-dom";
 
 const HeroBanner = ({ slides }) => {
+  const swiperRef = useRef(null);
+
   return (
     <Swiper
       speed={250}
@@ -27,7 +31,8 @@ const HeroBanner = ({ slides }) => {
       loop={true}
       autoplay={{ delay: 3000 }}
       pagination={{ clickable: true }}
-      navigation={true}
+      navigation={false}
+      onSwiper={(s) => (swiperRef.current = s)}
       className="slider h-[40vh] pt-10 mb-5 sm:h-[40vh] md:h-[50vh] xl:h-[calc(100vh-300px)]"
     >
       {slides &&
@@ -45,6 +50,23 @@ const HeroBanner = ({ slides }) => {
                   src={item.poster}
                 />
               </div>
+              <div className="nevi-icons" aria-hidden={false}>
+                <button
+                  className="nevi-btn nevi-prev"
+                  aria-label="Previous slide"
+                  onClick={() => swiperRef.current?.slidePrev()}
+                >
+                  <FaAngleLeft />
+                </button>
+                <button
+                  className="nevi-btn nevi-next"
+                  aria-label="Next slide"
+                  onClick={() => swiperRef.current?.slideNext()}
+                >
+                  <FaAngleRight />
+                </button>
+              </div>
+
               <div className=" z-10 ml-2 md:ml-12 min-w-32  md:max-w-2xl absolute bottom-0 sm:bottom-[30px]">
                 <div className="text-primary text-base font-semibold mb-2">
                   #{item.rank} Spotlight
