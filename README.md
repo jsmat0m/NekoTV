@@ -73,7 +73,7 @@ bun run dev
 
 ---
 
-## Self-Hosting Notice
+## 🏠 Self-Hosting Notice
 
 > [!CAUTION]
 > Self-hosting this application is **strictly limited to personal use only**. Commercial utilization is **prohibited**, and the inclusion of advertisements on your self-hosted website may lead to serious consequences, including **potential site takedown measures**. Ensure compliance to avoid any legal or operational issues.
