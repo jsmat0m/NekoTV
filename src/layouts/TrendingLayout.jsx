@@ -10,8 +10,6 @@ import Heading from "../components/Heading";
 import catIcon from "../assets/cat.svg";
 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-
-/* ensure the .nevi-* styles are loaded for this layout */
 import "../components/hero.css";
 
 const TrendingLayout = ({ data }) => {
@@ -19,11 +17,9 @@ const TrendingLayout = ({ data }) => {
 
   return (
     <div className="trending mt-5">
-      {/* Header: Title + custom nav (top-right aligned) */}
       <div className="flex items-center justify-between mb-2">
         <Heading>Trending</Heading>
 
-        {/* custom nevi nav aligned with title */}
         <div className="nevi-icons nevi-small" aria-hidden={false}>
           <button
             className="nevi-btn"
@@ -44,7 +40,7 @@ const TrendingLayout = ({ data }) => {
 
       <Swiper
         modules={[Navigation]}
-        navigation={false} // disable default nav because we use custom buttons
+        navigation={false} 
         onSwiper={(s) => (swiperRef.current = s)}
         breakpoints={{
           0: { slidesPerView: 3 },
@@ -56,12 +52,10 @@ const TrendingLayout = ({ data }) => {
           data.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="item flex flex-col items-center overflow-hidden px-1 md:px-2">
-                {/* Poster */}
                 <Link
                   to={`/anime/${item.id}`}
                   className="poster group w-full h-0 pb-[150%] bg-lightbg relative overflow-hidden rounded-md"
                 >
-                  {/* Blur Overlay */}
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
                     style={{
@@ -70,7 +64,6 @@ const TrendingLayout = ({ data }) => {
                     }}
                   ></div>
 
-                  {/* Cat Icon */}
                   <div className="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <img
                       src={catIcon}
@@ -79,7 +72,6 @@ const TrendingLayout = ({ data }) => {
                     />
                   </div>
 
-                  {/* Poster Image */}
                   <img
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
@@ -87,8 +79,7 @@ const TrendingLayout = ({ data }) => {
                     alt={item.title}
                   />
 
-                  {/* Rank */}
-                  <div className="rank p-1 text-sm md:text-base md:p-2 font-extrabold absolute top-0 bg-white text-center text-black z-30">
+                  <div className="rank p-1 text-sm md:text-base md:p-2 font-extrabold absolute top-0 bg-primary text-center text-black z-30">
                     0{item.rank}
                   </div>
                 </Link>
