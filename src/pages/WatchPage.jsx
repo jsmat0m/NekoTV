@@ -180,7 +180,7 @@ const WatchPage = () => {
                 url: window.location.href,
                 identifier: `${id}-ep-${ep}`,
                 title: `${formattedAnimeName} - Episode ${currentEp?.episodeNumber}`,
-                language: "zh_TW",
+                language: "ja",
               }}
             />
           </div>
