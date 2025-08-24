@@ -33,7 +33,7 @@ const ContinueWatching = () => {
   return (
     <div className="my-5">
       <h2 className="text-xl font-bold text-[var(--primary)] mb-3">Continue Watching</h2>
-      <div className="grid grid-cols-6 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2">
         {continueList.map((item, index) => (
           <div
             key={item.animeId + "-" + item.episodeId}
@@ -69,5 +69,6 @@ const ContinueWatching = () => {
 };
 
 export default ContinueWatching;
+
 
 
