@@ -9,6 +9,7 @@ import { MdTableRows } from "react-icons/md";
 import { HiMiniViewColumns } from "react-icons/hi2";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
+import { DiscussionEmbed } from "disqus-react"; // ✅ Added import
 
 const capitalizeWords = (str) => {
   return str
@@ -102,7 +103,6 @@ const WatchPage = () => {
 
   return (
     <>
-      {/* Main Content Container */}
       <div className="bg-backGround pt-14 max-w-screen-xl mx-auto py-2 md:px-2">
         <Helmet>
           <title>
@@ -173,10 +173,20 @@ const WatchPage = () => {
               />
             ))}
           </ul>
+          <div className="w-full mt-6 p-4 rounded-lg" style={{ background: "#145183" }}>
+            <DiscussionEmbed
+              shortname="nekotv"
+              config={{
+                url: window.location.href,
+                identifier: `${id}-ep-${ep}`,
+                title: `${formattedAnimeName} - Episode ${currentEp?.episodeNumber}`,
+                language: "zh_TW",
+              }}
+            />
+          </div>
         </div>
       </div>
 
-      {/* Footer Container */}
       <div className="w-full bg-backGround mt-10">
         <Footer />
       </div>
