@@ -183,7 +183,6 @@
 .swiper-button-next {
   display: none !important;
 }
-
 .nevi-icons {
   position: absolute;
   bottom: 12px;
@@ -193,7 +192,6 @@
   z-index: 60;
   pointer-events: auto;
 }
-
 .nevi-btn {
   --size: 42px;
   width: var(--size);
@@ -202,7 +200,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  background: var(--primary);
+  background: var(--primary, #f6c94d);
   color: black;
   border: none;
   cursor: pointer;
@@ -213,7 +211,6 @@
   display: inline-grid;
   place-items: center;
 }
-
 .nevi-btn:hover,
 .nevi-btn:focus {
   transform: translateY(-5px) scale(1.07);
@@ -221,12 +218,10 @@
   filter: saturate(1.05);
   outline: none;
 }
-
 .nevi-btn:focus-visible {
   outline: 3px solid rgba(0,0,0,0.06);
   outline-offset: 2px;
 }
-
 @media (max-width: 480px) {
   .nevi-icons {
     bottom: 10px;
@@ -238,10 +233,6 @@
     font-size: 16px;
   }
 }
-
-
-
-
 .nevi-small {
   gap: 6px;
 }
@@ -263,4 +254,28 @@
   }
 }
 
+/* ---------------------- TRENDING HEADER OVERRIDES ---------------------- */
+/* Make sure header (flex) is positioned so .nevi-icons can be aligned */
+.trending > .flex {
+  position: relative;
+}
 
+/* When .nevi-icons is used inside a .trending header, make it inline and right-aligned */
+.trending .nevi-icons {
+  position: static !important; /* override absolute used by hero variant */
+  margin-left: auto;           /* pushes it to the right in the header flex */
+  align-self: center;          /* vertically center with the Heading text */
+  z-index: 40;
+  display: flex;
+  pointer-events: auto;
+}
+
+/* Alternate (absolute top-right) option, uncomment to use this variant instead:
+.trending > .flex { position: relative; }
+.trending .nevi-icons {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  margin-left: 0;
+}
+*/
