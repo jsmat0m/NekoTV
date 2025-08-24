@@ -68,7 +68,7 @@ const HeroBanner = ({ slides }) => {
               </div>
 
               <div className=" z-10 ml-2 md:ml-12 min-w-32  md:max-w-2xl absolute bottom-0 sm:bottom-[30px]">
-                <div className="text-primary text-base font-semibold mb-2">
+                <div className="text-secondary text-base font-semibold mb-2">
                   #{item.rank} Spotlight
                 </div>
                 <div
