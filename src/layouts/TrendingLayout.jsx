@@ -79,7 +79,7 @@ const TrendingLayout = ({ data }) => {
                     alt={item.title}
                   />
 
-                  <div className="rank p-1 text-sm md:text-base md:p-2 font-extrabold absolute top-0 bg-primary text-center text-black z-30">
+                  <div className="rank p-1 text-sm md:text-base md:p-2 font-extrabold absolute top-0 bg-secondary text-center text-black z-30">
                     0{item.rank}
                   </div>
                 </Link>
