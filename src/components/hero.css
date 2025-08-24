@@ -103,9 +103,9 @@
       var(--background) 70%,
       transparent
     );
-  mask-composite: intersect; /* Combines the masks (for non-WebKit browsers) */
-  mask-size: 100% 100%, 100% 100%; /* Set size for both masks */
-  mask-repeat: no-repeat, no-repeat; /* Avoid repeating */
+  mask-composite: intersect; 
+  mask-size: 100% 100%, 100% 100%; 
+  mask-repeat: no-repeat, no-repeat; 
   -webkit-mask-image: linear-gradient(
       to right,
       transparent 0,
@@ -154,7 +154,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  -webkit-line-clamp: 2; /* Number of lines to display */
+  -webkit-line-clamp: 2; 
   line-clamp: 2;
   text-overflow: ellipsis;
 }
@@ -179,3 +179,67 @@
     display: none;
   }
 }
+
+
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+.nevi-icons {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 60;
+  pointer-events: auto;
+}
+
+.nevi-btn {
+  --size: 42px;
+  width: var(--size);
+  height: var(--size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--primary);
+  color: black;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: transform 180ms cubic-bezier(.2,.9,.3,1), box-shadow 180ms ease, filter 180ms ease;
+  transform-origin: center;
+  font-size: 18px;
+  display: inline-grid;
+  place-items: center;
+}
+
+.nevi-btn:hover,
+.nevi-btn:focus {
+  transform: translateY(-5px) scale(1.07);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+  filter: saturate(1.05);
+  outline: none;
+}
+
+.nevi-btn:focus-visible {
+  outline: 3px solid rgba(0,0,0,0.06);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .nevi-icons {
+    bottom: 10px;
+    right: 8px;
+    gap: 6px;
+  }
+  .nevi-btn {
+    --size: 36px;
+    font-size: 16px;
+  }
+}
+
