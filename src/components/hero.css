@@ -254,17 +254,14 @@
   }
 }
 
-/* ---------------------- TRENDING HEADER OVERRIDES ---------------------- */
-/* Make sure header (flex) is positioned so .nevi-icons can be aligned */
 .trending > .flex {
   position: relative;
 }
 
-/* When .nevi-icons is used inside a .trending header, make it inline and right-aligned */
 .trending .nevi-icons {
-  position: static !important; /* override absolute used by hero variant */
-  margin-left: auto;           /* pushes it to the right in the header flex */
-  align-self: center;          /* vertically center with the Heading text */
+  position: static !important;
+  margin-left: auto;
+  align-self: center;
   z-index: 40;
   display: flex;
   pointer-events: auto;
