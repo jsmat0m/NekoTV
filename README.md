@@ -19,7 +19,6 @@
 - 🔎 **Search & Discover** – Quickly find anime titles with smart search  
 - 📺 **HD Streaming** – Smooth, high-quality playback experience  
 - 📌 **Watchlist** – Save your favorite shows for later viewing  
-- 🌙 **Dark Mode** – Comfortable for late-night binge sessions  
 - 📱 **Responsive Design** – Optimized for desktop, tablet, and mobile screens  
 
 ---
