@@ -4,7 +4,6 @@ import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
 
-// Capitalize first letter helper
 const capitalize = (str) =>
   str && typeof str === "string" ? str.charAt(0).toUpperCase() + str.slice(1) : str;
 
