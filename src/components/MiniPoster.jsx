@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import SoundsInfo from "./SoundsInfo";
 import catIcon from "../assets/cat.svg"; 
@@ -8,7 +7,6 @@ const MiniPoster = ({ item }) => {
     <div key={item.id} className="flex border-lightBg pb-3 items-center gap-4">
       <Link className="" to={`/anime/${item.id}`}>
         <div className="poster group bg-white rounded-md flex-shrink-0 relative overflow-hidden w-16 pb-[85px]">
-          {/* Blur Overlay */}
           <div
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
             style={{
@@ -17,7 +15,6 @@ const MiniPoster = ({ item }) => {
             }}
           ></div>
 
-          {/* Cat Icon on hover */}
           <div className="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
             <img
               src={catIcon}
@@ -26,7 +23,6 @@ const MiniPoster = ({ item }) => {
             />
           </div>
 
-          {/* Poster Image (zoom effect) */}
           <img
             className="h-full absolute w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
             src={item.poster}
@@ -36,7 +32,6 @@ const MiniPoster = ({ item }) => {
         </div>
       </Link>
 
-      {/* Text Info */}
       <div className="text">
         <Link to={`/anime/${item.id}`}>
           <h2 className="title hover:text-primary mb-2 font-bold">
