@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import { useApi } from "../services/useApi";
 import PageNotFound from "../pages/PageNotFound";
