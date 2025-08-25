@@ -17,7 +17,6 @@ const Navbar = () => {
   return (
     <nav className="w-full py-4 bg-transparent">
       <div className="max-w-7xl mx-auto flex justify-center items-center px-4 sm:px-6 lg:px-8">
-        {/* Desktop Links */}
         <div className="hidden md:flex gap-4">
           {navLinks.map((item) => (
             <Link
@@ -34,7 +33,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden relative">
           <button
             onClick={() => setShow(!show)}
@@ -44,7 +42,6 @@ const Navbar = () => {
             Menu
           </button>
 
-          {/* Mobile Dropdown */}
           <ul
             className={`${
               show ? "flex" : "hidden"
