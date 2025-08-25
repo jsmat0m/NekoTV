@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { Link } from "react-router-dom";
 const Episodes = ({ episode, currentEp, layout }) => {
   const isCurrent = episode.id === currentEp.id;
