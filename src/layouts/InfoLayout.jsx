@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import SoundsInfo from "../components/SoundsInfo";
@@ -7,7 +6,6 @@ import { FaCirclePlay } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import CircleRatting from "../components/CircleRatting";
 
-// Format string: replace hyphens with spaces and capitalize each word
 const formatName = (str) =>
   str
     .replace(/-/g, " ")
@@ -42,7 +40,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
       </Helmet>
 
       <div className="banner min-h-[700px] relative w-full pt-10 md:pt-20">
-        {/* Background image */}
         <div className="absolute inset-0 overflow-hidden">
           <img
             src={data.poster}
@@ -50,7 +47,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
             className="object-cover object-center w-full h-full"
             loading="lazy"
           />
-          {/* Blur + Brightness overlay */}
           <div
             className="absolute inset-0"
             style={{
@@ -59,7 +55,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
           ></div>
         </div>
 
-        {/* Gradient overlay with transparent bottom fade */}
         <div
           className="absolute inset-0"
           style={{
@@ -67,9 +62,7 @@ const InfoLayout = ({ data, showBigPoster }) => {
           }}
         ></div>
 
-        {/* Content */}
         <div className="content relative z-10 max-w-[1200px] w-full mx-auto flex flex-col items-start md:flex-row gap-6 mb-2 px-2">
-          {/* Poster */}
           <div className="left w-full md:w-60 xl:w-80 flex justify-center">
             <div
               className="posterImg cursor-pointer rounded-xl overflow-hidden shadow-2xl bg-black/40 p-2"
@@ -83,9 +76,7 @@ const InfoLayout = ({ data, showBigPoster }) => {
             </div>
           </div>
 
-          {/* Info */}
           <div className="right mt-3 w-full flex flex-col gap-3 text-white">
-            {/* Breadcrumbs */}
             <div className="path hidden md:flex items-center gap-2 text-sm font-medium opacity-80">
               <Link to="/home" className="hover:text-primary">
                 Home
@@ -113,7 +104,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
               </div>
             )}
 
-            {/* Rating + Type + Duration */}
             <div className="sounds flex items-center flex-wrap gap-2 my-2 text-sm">
               <SoundsInfo
                 episodes={{
@@ -127,12 +117,10 @@ const InfoLayout = ({ data, showBigPoster }) => {
               <span className="text-gray-200 font-bold">{data.duration}</span>
             </div>
 
-            {/* Circle Rating */}
             <div className="cercle h-14 w-14">
               <CircleRatting rating={data.MAL_score} />
             </div>
 
-            {/* Watch button */}
             {data.id && (
               <div className="watch-btn my-4 w-full sm:w-1/2">
                 <Link to={`/watch/${data.id}`} className="block w-full">
@@ -144,7 +132,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
               </div>
             )}
 
-            {/* Genres */}
             <div className="genres flex flex-wrap gap-2">
               {data.genres.map((genre, index) => (
                 <Link to={`/animes/genre/${genre.toLowerCase()}`} key={genre}>
@@ -158,7 +145,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
               ))}
             </div>
 
-            {/* Synopsis */}
             {data.synopsis && (
               <div className="overview text-gray-200">
                 <p
@@ -177,7 +163,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
 
             <div className="lightBorder"></div>
 
-            {/* Status + Aired */}
             <div className="info flex-col sm:flex-row flex gap-5 text-sm">
               <div className="flex gap-1 status">
                 <p className="font-extrabold">Status :</p>
@@ -199,7 +184,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
 
             <div className="lightBorder"></div>
 
-            {/* Studio */}
             {data.studios && (
               <>
                 <div className="studio">
@@ -212,7 +196,6 @@ const InfoLayout = ({ data, showBigPoster }) => {
               </>
             )}
 
-            {/* Producers */}
             <div className="studio">
               <h4 className="text-center mb-2">Producers</h4>
               {data.producers && (
