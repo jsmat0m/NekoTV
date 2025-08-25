@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
 
-// Text-first logo for "ネコTV" with integrated cat ear on the first character.
-// Props: to, compact, showBadge, inlineEar
 export default function Logo({
   to = "/home",
   compact = false,
